@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "CTFeedback"
-  s.version      = "1.0.0"
+  s.version      = "1.0.2"
   s.summary      = "UI Component to feedback for iOS."
   s.homepage     = "https://github.com/rizumita/CTFeedback"
   s.license      = { :type => 'MIT', :file => 'LICENSE' }
