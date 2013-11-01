@@ -1,7 +1,7 @@
 CTFeedback
 ==========
 
-UI Component to feedback for iOS
+Library to send feedback for iOS. iOS >=  6.0
 
 ![Screenshot](https://raw.github.com/rizumita/CTFeedback/master/CTFeedback.png)
 
