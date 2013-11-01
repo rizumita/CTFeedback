@@ -1,0 +1,36 @@
+/* Localizable.strings
+  CTFeedbackDemo
+
+  Created by Ryoichi Izumita on 2013/10/31.
+  Copyright (c) 2013 CAPH. All rights reserved. */
+
+"Question" = "質問";
+
+"Request" = "リクエスト";
+
+"Bug Report" = "バグレポート";
+
+"Other" = "その他";
+
+"Device" = "デバイス";
+
+"iOS" = "iOS";
+
+"Name" = "アプリ名";
+
+"Version" = "バージョン";
+
+"Build" = "ビルド";
+
+"Device Info" = "デバイス情報";
+
+"App Info" = "アプリ情報";
+
+"Feedback" = "フィードバック";
+
+"Topic" = "トピック";
+
+"Topics" = "トピック";
+
+"Error" = "エラー";
+
