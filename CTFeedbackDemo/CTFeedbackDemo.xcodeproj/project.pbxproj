@@ -53,6 +53,7 @@
 		6A3F55511823243300217253 /* CTFeedbackTopicsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTFeedbackTopicsViewController.m; sourceTree = "<group>"; };
 		6A3F555418232A0600217253 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		6A3F555618233AFA00217253 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/CTFeedbackLocalizable.strings; sourceTree = "<group>"; };
+		6A3F5557182340D700217253 /* CTFeedback.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = CTFeedback.podspec; path = ../CTFeedback.podspec; sourceTree = "<group>"; };
 		6AEC61221821D17600B6DB37 /* CTFeedbackDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CTFeedbackDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AEC61251821D17600B6DB37 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6AEC61271821D17600B6DB37 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -110,6 +111,7 @@
 		6AEC61191821D17600B6DB37 = {
 			isa = PBXGroup;
 			children = (
+				6A3F5557182340D700217253 /* CTFeedback.podspec */,
 				6AEC615D1821D18D00B6DB37 /* CTFeedback */,
 				6AEC612B1821D17600B6DB37 /* CTFeedbackDemo */,
 				6AEC614D1821D17600B6DB37 /* CTFeedbackDemoTests */,
