@@ -3,6 +3,8 @@ CTFeedback
 
 UI Component to feedback for iOS
 
+![Screenshot](https://raw.github.com/rizumita/CTFeedback/master/CTFeedback.png)
+
 Example
 ----------
 
