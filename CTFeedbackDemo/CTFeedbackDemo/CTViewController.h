@@ -12,4 +12,5 @@
 
 - (IBAction)feedbackButtonTapped:(id)sender;
 
+- (IBAction)modalFeedbackButtonTapped:(id)sender;
 @end

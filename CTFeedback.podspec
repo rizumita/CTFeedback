@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
   s.license      = { :type => 'MIT', :file => 'LICENSE' }
   s.author       = { "Ryoichi Izumita" => "r.izumita@caph.jp" }
   s.platform     = :ios, '6.0'
-  s.source       = { :git => "https://github.com/rizumita/CTFeedback.git", :tag => "1.0.1" }
+  s.source       = { :git => "https://github.com/rizumita/CTFeedback.git", :tag => "1.0.2" }
   s.source_files  = 'Classes', 'Classes/**/*.{h,m}'
   s.resource_bundles = { 'CTFeedback' => ['Resources/*.lproj'] }
   s.framework  = 'MessageUI'

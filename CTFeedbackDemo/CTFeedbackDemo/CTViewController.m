@@ -34,4 +34,12 @@
     [self.navigationController pushViewController:feedbackViewController animated:YES];
 }
 
+- (IBAction)modalFeedbackButtonTapped:(id)sender
+{
+    CTFeedbackViewController *feedbackViewController = [CTFeedbackViewController controllerWithTopics:CTFeedbackViewController.defaultTopics localizedTopics:CTFeedbackViewController.defaultLocalizedTopics];
+    feedbackViewController.toRecipients = @[@"ctfeedback@example.com"];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:feedbackViewController];
+    [self presentViewController:navigationController animated:YES completion:nil];
+}
+
 @end

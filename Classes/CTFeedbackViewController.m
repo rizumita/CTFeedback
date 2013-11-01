@@ -62,7 +62,6 @@ typedef NS_ENUM(NSInteger, CTFeedbackSection){
     ];
 }
 
-
 - (instancetype)initWithTopics:(NSArray *)topics localizedTopics:(NSArray *)localizedTopics
 {
     self = [super initWithStyle:UITableViewStyleGrouped];
@@ -88,6 +87,15 @@ typedef NS_ENUM(NSInteger, CTFeedbackSection){
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Mail" style:UIBarButtonItemStylePlain target:self action:@selector(sendButtonTapped:)];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+
+    if (self.presentingViewController.presentedViewController) {
+        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelButtonTapped:)];
+    }
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -111,6 +119,11 @@ typedef NS_ENUM(NSInteger, CTFeedbackSection){
 }
 
 #pragma mark -
+
+- (void)cancelButtonTapped:(id)sender
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 - (void)setTopics:(NSArray *)topics
 {
@@ -375,7 +388,11 @@ typedef NS_ENUM(NSInteger, CTFeedbackSection){
                         error:(NSError *)error
 {
     void (^completion)(void) = ^{
-        [self.navigationController popViewControllerAnimated:YES];
+        if (self.presentingViewController.presentedViewController) {
+            [self dismissViewControllerAnimated:YES completion:nil];
+        } else {
+            [self.navigationController popViewControllerAnimated:YES];
+        }
     };
 
     if (result == MFMailComposeResultCancelled) {
