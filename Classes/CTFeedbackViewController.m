@@ -11,6 +11,7 @@
 #import "CTFeedbackCellItem.h"
 #import "CTFeedbackTopicsViewController.h"
 #include <sys/sysctl.h>
+#import "NSBundle+CTFeedback.h"
 #import <MessageUI/MessageUI.h>
 
 typedef NS_ENUM(NSInteger, CTFeedbackSection){
@@ -54,10 +55,10 @@ typedef NS_ENUM(NSInteger, CTFeedbackSection){
 + (NSArray *)defaultLocalizedTopics
 {
     return @[
-            NSLocalizedStringFromTable(@"Question", @"CTFeedbackLocalizable", @"Question"),
-            NSLocalizedStringFromTable(@"Request", @"CTFeedbackLocalizable", @"Request"),
-            NSLocalizedStringFromTable(@"Bug Report", @"CTFeedbackLocalizable", @"Bug Report"),
-            NSLocalizedStringFromTable(@"Other", @"CTFeedbackLocalizable", @"Other")
+            CTFBLocalizedString(@"Question"),
+            CTFBLocalizedString(@"Request"),
+            CTFBLocalizedString(@"Bug Report"),
+            CTFBLocalizedString(@"Other")
     ];
 }
 
@@ -76,7 +77,7 @@ typedef NS_ENUM(NSInteger, CTFeedbackSection){
 {
     [super viewDidLoad];
 
-    self.title = NSLocalizedStringFromTable(@"Feedback", @"CTFeedbackLocalizable", @"Feedback");
+    self.title = CTFBLocalizedString(@"Feedback");
 
     [self.tableView registerClass:[CTFeedbackCell class] forCellReuseIdentifier:[CTFeedbackTopicCellItem reuseIdentifier]];
     [self.tableView registerClass:[CTFeedbackCell class] forCellReuseIdentifier:[CTFeedbackContentCellItem reuseIdentifier]];
@@ -159,12 +160,12 @@ typedef NS_ENUM(NSInteger, CTFeedbackSection){
     NSMutableArray *result = [NSMutableArray array];
 
     CTFeedbackInfoCellItem *platformItem = [CTFeedbackInfoCellItem new];
-    platformItem.title = NSLocalizedStringFromTable(@"Device", @"CTFeedbackLocalizable", @"Device");
+    platformItem.title = CTFBLocalizedString(@"Device");
     platformItem.value = self.platformString;
     [result addObject:platformItem];
 
     CTFeedbackInfoCellItem *systemVersionItem = [CTFeedbackInfoCellItem new];
-    systemVersionItem.title = NSLocalizedStringFromTable(@"iOS", @"CTFeedbackLocalizable", @"iOS");
+    systemVersionItem.title = CTFBLocalizedString(@"iOS");
     systemVersionItem.value = self.systemVersion;
     [result addObject:systemVersionItem];
 
@@ -176,17 +177,17 @@ typedef NS_ENUM(NSInteger, CTFeedbackSection){
     NSMutableArray *result = [NSMutableArray array];
 
     CTFeedbackInfoCellItem *nameItem = [CTFeedbackInfoCellItem new];
-    nameItem.title = NSLocalizedStringFromTable(@"Name", @"CTFeedbackLocalizable", @"Name");
+    nameItem.title = CTFBLocalizedString(@"Name");
     nameItem.value = self.appName;
     [result addObject:nameItem];
 
     CTFeedbackInfoCellItem *versionItem = [CTFeedbackInfoCellItem new];
-    versionItem.title = NSLocalizedStringFromTable(@"Version", @"CTFeedbackLocalizable", @"Version");
+    versionItem.title = CTFBLocalizedString(@"Version");
     versionItem.value = self.appVersion;
     [result addObject:versionItem];
 
     CTFeedbackInfoCellItem *buildItem = [CTFeedbackInfoCellItem new];
-    buildItem.title = NSLocalizedStringFromTable(@"Build", @"CTFeedbackLocalizable", @"Build");
+    buildItem.title = CTFBLocalizedString(@"Build");
     buildItem.value = self.appBuild;
     [result addObject:buildItem];
 
@@ -337,9 +338,9 @@ typedef NS_ENUM(NSInteger, CTFeedbackSection){
         case CTFeedbackSectionInput:
             return nil;
         case CTFeedbackSectionDeviceInfo:
-            return NSLocalizedStringFromTable(@"Device Info", @"CTFeedbackLocalizable", @"Device Info");
+            return CTFBLocalizedString(@"Device Info");
         case CTFeedbackSectionAppInfo:
-            return NSLocalizedStringFromTable(@"App Info", @"CTFeedbackLocalizable", @"App Info");
+            return CTFBLocalizedString(@"App Info");
         default:
             return nil;
     }
@@ -380,10 +381,10 @@ typedef NS_ENUM(NSInteger, CTFeedbackSection){
     if (result == MFMailComposeResultCancelled) {
         completion = nil;
     } else if (result == MFMailComposeResultFailed && error) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedStringFromTable(@"Error", @"CTFeedbackLocalizable", @"Error")
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:CTFBLocalizedString(@"Error")
                                                         message:error.localizedDescription
                                                        delegate:nil
-                                              cancelButtonTitle:NSLocalizedStringFromTable(@"Dismiss", @"CTFeedbackLocalizable", @"Dismiss")
+                                              cancelButtonTitle:CTFBLocalizedString(@"Dismiss")
                                               otherButtonTitles:nil];
         [alert show];
     }

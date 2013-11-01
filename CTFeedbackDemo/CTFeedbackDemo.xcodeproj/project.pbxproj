@@ -33,6 +33,8 @@
 		6AEC61871821FBF800B6DB37 /* CTFeedbackLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6AEC61841821FBF800B6DB37 /* CTFeedbackLocalizable.strings */; };
 		CB8763551861E9398CFC8428 /* CTFeedbackCellItem.m in Sources */ = {isa = PBXBuildFile; fileRef = CB876438D25C52E9455F30EB /* CTFeedbackCellItem.m */; };
 		CB876D012CED040B497A28CF /* CTFeedbackCellItem.m in Sources */ = {isa = PBXBuildFile; fileRef = CB876438D25C52E9455F30EB /* CTFeedbackCellItem.m */; };
+		CB876FE09FF1D6E4370A491A /* NSBundle+CTFeedback.m in Sources */ = {isa = PBXBuildFile; fileRef = CB876691CB3B7AC00E58896D /* NSBundle+CTFeedback.m */; };
+		CB876FF2E2DDFB54569C1BC8 /* NSBundle+CTFeedback.m in Sources */ = {isa = PBXBuildFile; fileRef = CB876691CB3B7AC00E58896D /* NSBundle+CTFeedback.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,7 +82,9 @@
 		6AEC61651821D7DD00B6DB37 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		6AEC61851821FBF800B6DB37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/CTFeedbackLocalizable.strings; sourceTree = "<group>"; };
 		CB876438D25C52E9455F30EB /* CTFeedbackCellItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTFeedbackCellItem.m; sourceTree = "<group>"; };
+		CB876691CB3B7AC00E58896D /* NSBundle+CTFeedback.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+CTFeedback.m"; sourceTree = "<group>"; };
 		CB8767F3272405CCC42F1755 /* CTFeedbackCellItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTFeedbackCellItem.h; sourceTree = "<group>"; };
+		CB876BD696F2B66A829AA415 /* NSBundle+CTFeedback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+CTFeedback.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,6 +211,8 @@
 				CB8767F3272405CCC42F1755 /* CTFeedbackCellItem.h */,
 				6A3F55501823243300217253 /* CTFeedbackTopicsViewController.h */,
 				6A3F55511823243300217253 /* CTFeedbackTopicsViewController.m */,
+				CB876691CB3B7AC00E58896D /* NSBundle+CTFeedback.m */,
+				CB876BD696F2B66A829AA415 /* NSBundle+CTFeedback.h */,
 			);
 			name = Classes;
 			path = ../Classes;
@@ -330,6 +336,7 @@
 				6A3F554E18222FB400217253 /* CTFeedbackCell.m in Sources */,
 				6AEC613F1821D17600B6DB37 /* CTViewController.m in Sources */,
 				CB876D012CED040B497A28CF /* CTFeedbackCellItem.m in Sources */,
+				CB876FE09FF1D6E4370A491A /* NSBundle+CTFeedback.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,6 +349,7 @@
 				6AEC61541821D17600B6DB37 /* CTFeedbackDemoTests.m in Sources */,
 				6A3F55531823243300217253 /* CTFeedbackTopicsViewController.m in Sources */,
 				CB8763551861E9398CFC8428 /* CTFeedbackCellItem.m in Sources */,
+				CB876FF2E2DDFB54569C1BC8 /* NSBundle+CTFeedback.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
