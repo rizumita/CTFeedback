@@ -56,6 +56,7 @@
 		6A3F555418232A0600217253 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		6A3F555618233AFA00217253 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/CTFeedbackLocalizable.strings; sourceTree = "<group>"; };
 		6A3F5557182340D700217253 /* CTFeedback.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = CTFeedback.podspec; path = ../CTFeedback.podspec; sourceTree = "<group>"; };
+		6A3F55591825B2FA00217253 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/CTFeedbackLocalizable.strings; sourceTree = "<group>"; };
 		6AEC61221821D17600B6DB37 /* CTFeedbackDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CTFeedbackDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AEC61251821D17600B6DB37 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6AEC61271821D17600B6DB37 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -276,7 +277,7 @@
 				ORGANIZATIONNAME = CAPH;
 				TargetAttributes = {
 					6AEC61451821D17600B6DB37 = {
-						TestTargetID = 6AEC61211821D17600B6DB37 /* CTFeedbackDemo */;
+						TestTargetID = 6AEC61211821D17600B6DB37;
 					};
 				};
 			};
@@ -288,6 +289,7 @@
 				en,
 				Base,
 				ja,
+				ru,
 			);
 			mainGroup = 6AEC61191821D17600B6DB37;
 			productRefGroup = 6AEC61231821D17600B6DB37 /* Products */;
@@ -402,6 +404,7 @@
 				6AEC61851821FBF800B6DB37 /* Base */,
 				6A3F554B1821FC2000217253 /* en */,
 				6A3F555618233AFA00217253 /* ja */,
+				6A3F55591825B2FA00217253 /* ru */,
 			);
 			name = CTFeedbackLocalizable.strings;
 			sourceTree = "<group>";

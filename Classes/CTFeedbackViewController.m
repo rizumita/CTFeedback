@@ -84,7 +84,7 @@ typedef NS_ENUM(NSInteger, CTFeedbackSection){
 
     self.cellItems = @[self.inputCellItems, self.deviceInfoCellItems, self.appInfoCellItems];
 
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Mail" style:UIBarButtonItemStylePlain target:self action:@selector(sendButtonTapped:)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:CTFBLocalizedString(@"Mail") style:UIBarButtonItemStylePlain target:self action:@selector(sendButtonTapped:)];
 }
 
 - (void)viewWillAppear:(BOOL)animated
