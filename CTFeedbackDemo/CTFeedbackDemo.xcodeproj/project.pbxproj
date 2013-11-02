@@ -277,7 +277,7 @@
 				ORGANIZATIONNAME = CAPH;
 				TargetAttributes = {
 					6AEC61451821D17600B6DB37 = {
-						TestTargetID = 6AEC61211821D17600B6DB37;
+						TestTargetID = 6AEC61211821D17600B6DB37 /* CTFeedbackDemo */;
 					};
 				};
 			};
