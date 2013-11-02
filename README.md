@@ -5,6 +5,13 @@ Library to send feedback for iOS. iOS >=  6.0
 
 ![Screenshot](https://raw.github.com/rizumita/CTFeedback/master/CTFeedback.png)
 
+Install
+----------
+To  install  by  CocoaPods
+```Ruby
+pod 'CTFeedback'
+```
+
 Example
 ----------
 
