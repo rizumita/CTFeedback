@@ -86,6 +86,7 @@
 		CB876691CB3B7AC00E58896D /* NSBundle+CTFeedback.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+CTFeedback.m"; sourceTree = "<group>"; };
 		CB8767F3272405CCC42F1755 /* CTFeedbackCellItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTFeedbackCellItem.h; sourceTree = "<group>"; };
 		CB876BD696F2B66A829AA415 /* NSBundle+CTFeedback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+CTFeedback.h"; sourceTree = "<group>"; };
+		D16DCD50183C8D300025189E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/CTFeedbackLocalizable.strings"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -277,7 +278,7 @@
 				ORGANIZATIONNAME = CAPH;
 				TargetAttributes = {
 					6AEC61451821D17600B6DB37 = {
-						TestTargetID = 6AEC61211821D17600B6DB37 /* CTFeedbackDemo */;
+						TestTargetID = 6AEC61211821D17600B6DB37;
 					};
 				};
 			};
@@ -290,6 +291,7 @@
 				Base,
 				ja,
 				ru,
+				"zh-Hans",
 			);
 			mainGroup = 6AEC61191821D17600B6DB37;
 			productRefGroup = 6AEC61231821D17600B6DB37 /* Products */;
@@ -405,6 +407,7 @@
 				6A3F554B1821FC2000217253 /* en */,
 				6A3F555618233AFA00217253 /* ja */,
 				6A3F55591825B2FA00217253 /* ru */,
+				D16DCD50183C8D300025189E /* zh-Hans */,
 			);
 			name = CTFeedbackLocalizable.strings;
 			sourceTree = "<group>";
