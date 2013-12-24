@@ -122,7 +122,17 @@ typedef NS_ENUM(NSInteger, CTFeedbackSection){
 
 - (void)cancelButtonTapped:(id)sender
 {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    if(self.navigationController != nil){
+        if( [self.navigationController viewControllers][0] == self){
+            // Can't pop, just dismiss
+            [self dismissViewControllerAnimated:YES completion:nil];
+        }else{
+            // Can be popped
+            [self.navigationController popViewControllerAnimated:YES];
+        }
+    }else{
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
 }
 
 - (void)setTopics:(NSArray *)topics
