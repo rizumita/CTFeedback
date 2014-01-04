@@ -316,7 +316,7 @@ typedef NS_ENUM(NSInteger, CTFeedbackSection){
     
     if (self.useHTML) {
         body = [NSString stringWithFormat:@"<style>td {padding-right: 20px}</style>\
-                <p>%@</p><br /><br /><br />\
+                <p>%@</p><br />\
                 <table cellspacing=0 cellpadding=0>\
                 <tr><td>Device:</td><td><b>%@</b></td></tr>\
                 <tr><td>iOS:</td><td><b>%@</b></td></tr>\
