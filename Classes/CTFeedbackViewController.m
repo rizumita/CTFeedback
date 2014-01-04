@@ -340,6 +340,10 @@ typedef NS_ENUM(NSInteger, CTFeedbackSection){
                 self.appBuild];
     }
     
+    if (self.additionalDiagnosticContent) {
+        body = [body stringByAppendingString:self.additionalDiagnosticContent];
+    }
+    
     return body;
 }
 
