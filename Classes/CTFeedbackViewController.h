@@ -35,6 +35,9 @@
 
 @property (nonatomic, strong) NSArray *bccRecipients;
 
+@property (nonatomic, strong) NSString *additionalDiagnosticContent;
+@property (assign) BOOL useHTML;
+
 + (CTFeedbackViewController *)controllerWithTopics:(NSArray *)topics localizedTopics:(NSArray *)localizedTopics;
 
 + (NSArray *)defaultTopics;
