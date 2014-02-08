@@ -41,3 +41,10 @@
 @property (nonatomic, copy) NSString *value;
 
 @end
+
+@interface CTFeedbackAdditionInfoCellItem : CTFeedbackCellItem
+
+@property (nonatomic, strong) UIImage *screenImage;
+@property (nonatomic, copy) NSString *title;
+@property (nonatomic, copy) NSString *value;
+@end
