@@ -349,14 +349,23 @@ typedef NS_ENUM(NSInteger, CTFeedbackSection){
 
 - (void)sendButtonTapped:(id)sender
 {
-    MFMailComposeViewController *controller = [[MFMailComposeViewController alloc] init];
-    controller.mailComposeDelegate = self;
-    [controller setToRecipients:self.toRecipients];
-    [controller setCcRecipients:self.ccRecipients];
-    [controller setBccRecipients:self.bccRecipients];
-    [controller setSubject:self.mailSubject];
-    [controller setMessageBody:self.mailBody isHTML:self.useHTML];
-    [self presentViewController:controller animated:YES completion:nil];
+    if ([MFMailComposeViewController canSendMail]) {
+        MFMailComposeViewController *controller = [[MFMailComposeViewController alloc] init];
+        controller.mailComposeDelegate = self;
+        [controller setToRecipients:self.toRecipients];
+        [controller setCcRecipients:self.ccRecipients];
+        [controller setBccRecipients:self.bccRecipients];
+        [controller setSubject:self.mailSubject];
+        [controller setMessageBody:self.mailBody isHTML:self.useHTML];
+        [self presentViewController:controller animated:YES completion:nil];
+    }else{
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:CTFBLocalizedString(@"Error")
+                                                        message:CTFBLocalizedString(@"Mail no configuration")
+                                                       delegate:nil
+                                              cancelButtonTitle:CTFBLocalizedString(@"Dismiss")
+                                              otherButtonTitles:nil];
+        [alert show];
+    }
 }
 
 #pragma mark - Table view data source
