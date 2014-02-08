@@ -35,3 +35,7 @@
 "Error" = "エラー";
 
 "Mail" = "メール";
+
+"Mail no configuration"="有効な電子メールアカウントを持っていない";
+
+"Dismiss"="Dismiss";

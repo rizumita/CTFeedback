@@ -35,3 +35,7 @@
 "Error" = "Error";
 
 "Mail" = "Mail";
+
+"Mail no configuration"="You do not have a valid e-mail account";
+
+"Dismiss"="Dismiss";
