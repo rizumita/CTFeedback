@@ -35,3 +35,7 @@
 "Error" = "錯誤";
 
 "Mail" = "郵件";
+
+"Mail no configuration"="您沒有一個有效的郵件賬戶";
+
+"Dismiss"="Dismiss";

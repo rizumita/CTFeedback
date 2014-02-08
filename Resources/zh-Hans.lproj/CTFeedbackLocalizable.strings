@@ -35,3 +35,7 @@
 "Error" = "错误";
 
 "Mail" = "邮件";
+
+"Mail no configuration"="您没有一个有效的邮件账户";
+
+"Dismiss"="Dismiss";
