@@ -16,11 +16,12 @@
 
 typedef NS_ENUM(NSInteger, CTFeedbackSection){
     CTFeedbackSectionInput = 0,
+    CTFeedbackSectionScreenshot,
     CTFeedbackSectionDeviceInfo,
     CTFeedbackSectionAppInfo
 };
 
-@interface CTFeedbackViewController ()
+@interface CTFeedbackViewController ()<UIImagePickerControllerDelegate,UIActionSheetDelegate,UINavigationControllerDelegate>
 
 @property (nonatomic, readonly) NSUInteger selectedTopicIndex;
 
@@ -29,10 +30,13 @@ typedef NS_ENUM(NSInteger, CTFeedbackSection){
 @property (nonatomic, readonly) NSArray *inputCellItems;
 @property (nonatomic, readonly) NSArray *deviceInfoCellItems;
 @property (nonatomic, readonly) NSArray *appInfoCellItems;
+@property (nonatomic, readonly) NSArray *additionCellItems;
 @property (nonatomic, strong) CTFeedbackTopicCellItem *topicCellItem;
 @property (nonatomic, strong) CTFeedbackContentCellItem *contentCellItem;
+@property (nonatomic, strong) CTFeedbackAdditionInfoCellItem *additionCellItem;
 @property (nonatomic, readonly) NSString *mailSubject;
 @property (nonatomic, readonly) NSString *mailBody;
+@property (nonatomic, readonly) NSData *mailAttachment;
 @end
 
 @implementation CTFeedbackViewController
@@ -82,8 +86,9 @@ typedef NS_ENUM(NSInteger, CTFeedbackSection){
     [self.tableView registerClass:[CTFeedbackCell class] forCellReuseIdentifier:[CTFeedbackTopicCellItem reuseIdentifier]];
     [self.tableView registerClass:[CTFeedbackCell class] forCellReuseIdentifier:[CTFeedbackContentCellItem reuseIdentifier]];
     [self.tableView registerClass:[CTFeedbackCell class] forCellReuseIdentifier:[CTFeedbackInfoCellItem reuseIdentifier]];
+    [self.tableView registerClass:[CTFeedbackCell class] forCellReuseIdentifier:[CTFeedbackAdditionInfoCellItem reuseIdentifier]];
 
-    self.cellItems = @[self.inputCellItems, self.deviceInfoCellItems, self.appInfoCellItems];
+    self.cellItems = @[self.inputCellItems, self.additionCellItems ,self.deviceInfoCellItems, self.appInfoCellItems];
 
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:CTFBLocalizedString(@"Mail") style:UIBarButtonItemStylePlain target:self action:@selector(sendButtonTapped:)];
 }
@@ -177,6 +182,27 @@ typedef NS_ENUM(NSInteger, CTFeedbackSection){
     [result addObject:self.contentCellItem];
 
     return result.copy;
+}
+
+- (NSArray *)additionCellItems{
+    NSMutableArray *result = [NSMutableArray array];
+
+	__weak typeof (self) weakSelf = self;
+
+	self.additionCellItem = [CTFeedbackAdditionInfoCellItem new];
+    self.additionCellItem.value = CTFBLocalizedString(@"Additional detail");
+    self.additionCellItem.action = ^(CTFeedbackViewController *sender){
+		UIActionSheet *choiceSheet = [[UIActionSheet alloc] initWithTitle:nil
+                                                                 delegate:weakSelf
+                                                        cancelButtonTitle:CTFBLocalizedString(@"Cancel")
+                                                   destructiveButtonTitle:nil
+                                                        otherButtonTitles:CTFBLocalizedString(@"Camera"), CTFBLocalizedString(@"PhotoLibrary"), nil];
+		[choiceSheet showInView:weakSelf.view];
+    };
+
+    [result addObject:self.additionCellItem];
+
+    return [result copy];
 }
 
 - (NSArray *)deviceInfoCellItems
@@ -346,24 +372,47 @@ typedef NS_ENUM(NSInteger, CTFeedbackSection){
     
     return body;
 }
+#pragma mark - Convert image
 
+static NSString * const MIME_TYPE_JPEG = @"image/jpeg";
+static NSString * const ATTACHMENT_FILENAME = @"screenshot.jpg";
+
+- (NSData *)mailAttachment{
+    return UIImageJPEGRepresentation(self.additionCellItem.screenImage, 0.5);
+}
+
+#pragma mark - send email
 - (void)sendButtonTapped:(id)sender
 {
-    MFMailComposeViewController *controller = [[MFMailComposeViewController alloc] init];
-    controller.mailComposeDelegate = self;
-    [controller setToRecipients:self.toRecipients];
-    [controller setCcRecipients:self.ccRecipients];
-    [controller setBccRecipients:self.bccRecipients];
-    [controller setSubject:self.mailSubject];
-    [controller setMessageBody:self.mailBody isHTML:self.useHTML];
-    [self presentViewController:controller animated:YES completion:nil];
+    if ([MFMailComposeViewController canSendMail]) {
+        MFMailComposeViewController *controller = [[MFMailComposeViewController alloc] init];
+        controller.mailComposeDelegate = self;
+        [controller setToRecipients:self.toRecipients];
+        [controller setCcRecipients:self.ccRecipients];
+        [controller setBccRecipients:self.bccRecipients];
+        [controller setSubject:self.mailSubject];
+        [controller setMessageBody:self.mailBody isHTML:self.useHTML];
+        // Attach an image to the email
+        if (self.mailAttachment && [self.mailAttachment length]>0) {
+            [controller addAttachmentData:self.mailAttachment mimeType:MIME_TYPE_JPEG fileName:ATTACHMENT_FILENAME];
+        }
+        [self presentViewController:controller animated:YES completion:nil];
+    }else{
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:CTFBLocalizedString(@"Error")
+                                                        message:CTFBLocalizedString(@"Mail no configuration")
+                                                       delegate:nil
+                                              cancelButtonTitle:CTFBLocalizedString(@"Dismiss")
+                                              otherButtonTitles:nil];
+        [alert show];
+    }
 }
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 3;
+//    return 3;
+    return [self.cellItems count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -386,6 +435,8 @@ typedef NS_ENUM(NSInteger, CTFeedbackSection){
     switch (section) {
         case CTFeedbackSectionInput:
             return nil;
+        case CTFeedbackSectionScreenshot:
+            return CTFBLocalizedString(@"Additional Info");
         case CTFeedbackSectionDeviceInfo:
             return CTFBLocalizedString(@"Device Info");
         case CTFeedbackSectionAppInfo:
@@ -445,4 +496,53 @@ typedef NS_ENUM(NSInteger, CTFeedbackSection){
     [controller dismissViewControllerAnimated:YES completion:completion];
 }
 
+#pragma mark UIActionSheetDelegate
+
+- (void)createImagePickerControllerWithSourceType:(UIImagePickerControllerSourceType)sourceType{
+    UIImagePickerController *controller = [[UIImagePickerController alloc] init];
+    controller.sourceType = sourceType;
+    controller.allowsEditing = YES;
+    controller.delegate = self;
+    [self presentViewController:controller animated:YES completion:nil];
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    UIImagePickerControllerSourceType sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    if (buttonIndex == 0) {
+        // camera
+        if([self isCameraAvailable]) {
+            sourceType = UIImagePickerControllerSourceTypeCamera;
+        }
+
+        [self createImagePickerControllerWithSourceType:sourceType];
+    } else if (buttonIndex == 1) {
+        // PhotoLibrary
+        [self createImagePickerControllerWithSourceType:sourceType];
+    }
+}
+
+#pragma mark - UIImagePickerControllerDelegate
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    [picker dismissViewControllerAnimated:YES completion:^() {
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:CTFeedbackSectionScreenshot];
+        CTFeedbackAdditionInfoCellItem *cellItem = self.cellItems[(NSUInteger)indexPath.section][(NSUInteger)indexPath.row];
+
+        UIImage *image = [info objectForKey:UIImagePickerControllerEditedImage];
+        if (image == nil){
+			image = [info objectForKey:UIImagePickerControllerOriginalImage];
+        }
+        cellItem.screenImage = image;
+        //        cellItem.value = [[info objectForKey:@"UIImagePickerControllerReferenceURL"] absoluteString];
+        [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    }];
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+    [picker dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark - camera utility
+- (BOOL) isCameraAvailable{
+    return [UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera];
+}
 @end

@@ -35,3 +35,17 @@
 "Error" = "错误";
 
 "Mail" = "邮件";
+
+"Mail no configuration"="您没有一个有效的邮件账户";
+
+"Dismiss"="Dismiss";
+
+"Additional Info"="附加信息";
+
+"Additional detail"="选择反馈附件（图片）";
+
+"Cancel"="取消";
+
+"Camera"="拍照";
+
+"PhotoLibrary"="从相册中选取";

@@ -35,3 +35,17 @@
 "Error" = "エラー";
 
 "Mail" = "メール";
+
+"Mail no configuration"="有効な電子メールアカウントを持っていない";
+
+"Dismiss"="Dismiss";
+
+"Additional Info"="追加情報";
+
+"Additional detail"="フィードバック添付ファイル（画像）を選択します";
+
+"Cancel"="Cancel";
+
+"Camera"="Camera";
+
+"PhotoLibrary"="アルバムから選択";

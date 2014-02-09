@@ -35,3 +35,17 @@
 "Error" = "Ошибка";
 
 "Mail" = "Отправить";
+
+"Mail no configuration"="Вы не должны действительную учетную запись электронной почты ";
+
+"Dismiss"="Dismiss";
+
+"Additional Info"="Дополнительная информация ";
+
+"Additional detail"="Выберите вложение обратной связи (изображение)";
+
+"Cancel"="Cancel";
+
+"Camera"="Camera";
+
+"PhotoLibrary"="Выберите из альбома";
