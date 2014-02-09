@@ -36,16 +36,16 @@
 
 "Mail" = "メール";
 
-"Mail no configuration"="有効な電子メールアカウントを持っていない";
+"Mail no configuration"="有効な電子メールアカウントを持っていません";
 
 "Dismiss"="Dismiss";
 
 "Additional Info"="追加情報";
 
-"Additional detail"="フィードバック添付ファイル（画像）を選択します";
+"Additional detail"="フィードバック添付画像を選択";
 
-"Cancel"="Cancel";
+"Cancel"="キャンセル";
 
-"Camera"="Camera";
+"Camera"="カメラ";
 
 "PhotoLibrary"="アルバムから選択";
