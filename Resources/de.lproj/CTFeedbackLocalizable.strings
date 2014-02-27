@@ -1,0 +1,52 @@
+/* Localizable.strings
+  CTFeedbackDemo
+
+  Created by Ryoichi Izumita on 2013/10/31.
+  Copyright (c) 2013 CAPH. All rights reserved. */
+
+"Question" = "Frage";
+
+"Request" = "Anfrage";
+
+"Bug Report" = "Fehlerbericht";
+
+"Other" = "Sonstiges";
+
+"Device" = "Gerät";
+
+"iOS" = "iOS";
+
+"Name" = "Name";
+
+"Version" = "Version";
+
+"Build" = "Build";
+
+"Device Info" = "Geräte-Angaben";
+
+"App Info" = "App-Angaben";
+
+"Feedback" = "Feedback";
+
+"Topic" = "Thema";
+
+"Topics" = "Themen";
+
+"Error" = "Fehler";
+
+"Mail" = "E-Mail";
+
+"Mail no configuration" = "Es ist kein gültiger E-Mail-Account eingerichtet.";
+
+"Dismiss" = "Okay";
+
+"Additional Info" = "Zusätzliche Angaben";
+
+"Additional detail" = "Anhang für Feedback wählen (Foto)";
+
+"Cancel" = "Abbrechen";
+
+"Camera" = "Kamera";
+
+"PhotoLibrary" = "Aus Album auswählen";
+
