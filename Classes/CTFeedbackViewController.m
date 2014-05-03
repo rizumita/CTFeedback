@@ -157,7 +157,7 @@ typedef NS_ENUM(NSInteger, CTFeedbackSection){
 {
     NSMutableArray *result = [NSMutableArray array];
 
-    __weak typeof (self) weakSelf = self;
+    __weak CTFeedbackViewController *weakSelf = self;
 
     self.topicCellItem = [CTFeedbackTopicCellItem new];
     self.topicCellItem.topic = self.localizedTopics[self.selectedTopicIndex];
@@ -187,7 +187,7 @@ typedef NS_ENUM(NSInteger, CTFeedbackSection){
 - (NSArray *)additionCellItems{
     NSMutableArray *result = [NSMutableArray array];
 
-	__weak typeof (self) weakSelf = self;
+	__weak CTFeedbackViewController *weakSelf = self;
 
 	self.additionCellItem = [CTFeedbackAdditionInfoCellItem new];
     self.additionCellItem.value = CTFBLocalizedString(@"Additional detail");
