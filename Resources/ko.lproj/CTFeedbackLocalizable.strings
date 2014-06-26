@@ -1,0 +1,51 @@
+/* Localizable.strings
+  CTFeedbackDemo
+
+  Created by Ryoichi Izumita on 2013/10/31.
+  Copyright (c) 2013 CAPH. All rights reserved. */
+
+"Question" = "질문";
+
+"Request" = "요청";
+
+"Bug Report" = "버그 리포트";
+
+"Other" = "기타";
+
+"Device" = "디바이스";
+
+"iOS" = "iOS";
+
+"Name" = "이름";
+
+"Version" = "버젼";
+
+"Build" = "빌드";
+
+"Device Info" = "디바이스 정보";
+
+"App Info" = "앱 정보";
+
+"Feedback" = "피드백";
+
+"Topic" = "주제";
+
+"Topics" = "주제들";
+
+"Error" = "오류";
+
+"Mail" = "메일";
+
+"Mail no configuration"="정상적인 이메일 계정을 갖고 있지 않습니다";
+
+"Dismiss"="닫기";
+
+"Additional Info"="추가 정보";
+
+"Additional detail"="같이 전달할 첨부사진 고르기";
+
+"Cancel"="취소";
+
+"Camera"="카메라에서 선택";
+
+"PhotoLibrary"="앨범에서 선택";
