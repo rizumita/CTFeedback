@@ -35,6 +35,7 @@
 		CB876D012CED040B497A28CF /* CTFeedbackCellItem.m in Sources */ = {isa = PBXBuildFile; fileRef = CB876438D25C52E9455F30EB /* CTFeedbackCellItem.m */; };
 		CB876FE09FF1D6E4370A491A /* NSBundle+CTFeedback.m in Sources */ = {isa = PBXBuildFile; fileRef = CB876691CB3B7AC00E58896D /* NSBundle+CTFeedback.m */; };
 		CB876FF2E2DDFB54569C1BC8 /* NSBundle+CTFeedback.m in Sources */ = {isa = PBXBuildFile; fileRef = CB876691CB3B7AC00E58896D /* NSBundle+CTFeedback.m */; };
+		F83DBCDB18F5C44300C0B601 /* PlatformNames.plist in Resources */ = {isa = PBXBuildFile; fileRef = F83DBCDA18F5C44300C0B601 /* PlatformNames.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +95,7 @@
 		CB8767F3272405CCC42F1755 /* CTFeedbackCellItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTFeedbackCellItem.h; sourceTree = "<group>"; };
 		CB876BD696F2B66A829AA415 /* NSBundle+CTFeedback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+CTFeedback.h"; sourceTree = "<group>"; };
 		D16DCD50183C8D300025189E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/CTFeedbackLocalizable.strings"; sourceTree = "<group>"; };
+		F83DBCDA18F5C44300C0B601 /* PlatformNames.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PlatformNames.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,6 +214,7 @@
 		6AEC615E1821D19D00B6DB37 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				F83DBCDA18F5C44300C0B601 /* PlatformNames.plist */,
 				6AEC615F1821D19D00B6DB37 /* CTFeedbackViewController.h */,
 				6AEC61601821D19D00B6DB37 /* CTFeedbackViewController.m */,
 				6A3F554C18222FB400217253 /* CTFeedbackCell.h */,
@@ -321,6 +324,7 @@
 			files = (
 				6AEC61861821FBF800B6DB37 /* CTFeedbackLocalizable.strings in Resources */,
 				6AEC613C1821D17600B6DB37 /* Main_iPad.storyboard in Resources */,
+				F83DBCDB18F5C44300C0B601 /* PlatformNames.plist in Resources */,
 				6AEC61411821D17600B6DB37 /* Images.xcassets in Resources */,
 				6AEC61391821D17600B6DB37 /* Main_iPhone.storyboard in Resources */,
 				6AEC61301821D17600B6DB37 /* InfoPlist.strings in Resources */,

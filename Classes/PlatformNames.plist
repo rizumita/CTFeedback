@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>iPhone1,1</key>
+	<string>iPhone 1G</string>
+	<key>iPhone1,2</key>
+	<string>iPhone 3G</string>
+	<key>iPhone2,1</key>
+	<string>iPhone 3GS</string>
+	<key>iPhone3,1</key>
+	<string>iPhone 4</string>
+	<key>iPhone3,3</key>
+	<string>Verizon iPhone 4</string>
+	<key>iPhone4,1</key>
+	<string>iPhone 4S</string>
+	<key>iPhone5,1</key>
+	<string>iPhone 5 (GSM)</string>
+    <key>iPhone5,1</key>
+    <string>iPhone 5 (GSM)</string>
+    <key>iPhone5,2</key>
+    <string>iPhone 5 (GSM+CDMA)</string>
+    <key>iPhone5,3</key>
+    <string>iPhone 5c (GSM)</string>
+    <key>iPhone5,4</key>
+    <string>iPhone 5c (Global)</string>
+    <key>iPhone6,1</key>
+    <string>iPhone 5s (GSM)</string>
+    <key>iPhone6,2</key>
+    <string>iPhone 5s (Global)</string>
+    <key>iPod1,1</key>
+    <string>iPod Touch 1G</string>
+    <key>iPod2,1</key>
+    <string>iPod Touch 2G</string>
+    <key>iPod3,1</key>
+    <string>iPod Touch 3G</string>
+    <key>iPod4,1</key>
+    <string>iPod Touch 4G</string>
+    <key>iPod5,1</key>
+    <string>iPod Touch 5G</string>
+    <key>iPad1,1</key>
+    <string>iPad</string>
+    <key>iPad2,1</key>
+    <string>iPad 2 (W i)</string>
+    <key>iPad2,2</key>
+    <string>iPad 2 (GSM)</string>
+    <key>iPad2,3</key>
+    <string>iPad 2 (CDMA)</string>
+    <key>iPad2,4</key>
+    <string>iPad 2</string>
+    <key>iPad3,1</key>
+    <string>iPad-3G (W i)</string>
+    <key>iPad3,2</key>
+    <string>iPad-3G (4G)</string>
+    <key>iPad3,3</key>
+    <string>iPad-3G (4G)</string>
+    <key>iPad3,4</key>
+    <string>iPad-4G (W i)</string>
+    <key>iPad3,5</key>
+    <string>iPad-4G (GSM)</string>
+    <key>iPad3,6</key>
+    <string>iPad-4G (GSM+CDMA)</string>
+    <key>iPad4,1</key>
+    <string>iPad Air (W i)</string>
+    <key>iPad4,2</key>
+    <string>iPad Air (Cellular)</string>
+    <key>iPad2,5</key>
+    <string>iPad mini-1G (W i)</string>
+    <key>iPad2,6</key>
+    <string>iPad mini-1G (GSM)</string>
+    <key>iPad2,7</key>
+    <string>iPad mini-1G (GSM+CDMA)</string>
+    <key>iPad4,4</key>
+    <string>iPad mini-2G (W i)</string>
+    <key>iPad4,5</key>
+    <string>iPad mini-2G (Cellular)</string>
+    <key>i386</key>
+    <string>Simulator</string>
+    <key>x86_64</key>
+    <string>Simulator</string>
+</dict>
+</plist>

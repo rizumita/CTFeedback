@@ -4,15 +4,17 @@
   Created by Ryoichi Izumita on 2013/10/31.
   Copyright (c) 2013 CAPH. All rights reserved. */
 
+// Edited by Dennis Kutlubaev (alwawee@gmail.com)
+
 "Question" = "Вопрос";
 
 "Request" = "Предложение";
 
-"Bug Report" = "Сообщить об ошибке";
+"Bug Report" = "Уведомление об ошибке";
 
 "Other" = "Другое";
 
-"Device" = "Аппарат";
+"Device" = "Устройство";
 
 "iOS" = "iOS";
 
@@ -20,7 +22,7 @@
 
 "Version" = "Версия";
 
-"Build" = "Билд";
+"Build" = "Сборка";
 
 "Device Info" = "Информация об устройстве";
 
@@ -36,16 +38,16 @@
 
 "Mail" = "Отправить";
 
-"Mail no configuration"="Вы не должны действительную учетную запись электронной почты ";
+"Mail no configuration"="Отсутствует учётная запись электронной почты.";
 
 "Dismiss"="Dismiss";
 
-"Additional Info"="Дополнительная информация ";
+"Additional Info"="Дополнительная информация";
 
-"Additional detail"="Выберите вложение обратной связи (изображение)";
+"Additional detail"="Прикрепить";
 
-"Cancel"="Cancel";
+"Cancel"="Отмена";
 
-"Camera"="Camera";
+"Camera"="Камера";
 
-"PhotoLibrary"="Выберите из альбома";
+"PhotoLibrary"="Фотоальбом";
