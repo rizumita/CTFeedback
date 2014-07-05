@@ -37,7 +37,7 @@ typedef NS_ENUM(NSInteger, CTFeedbackSection){
 @property (nonatomic, readonly) NSString *mailSubject;
 @property (nonatomic, readonly) NSString *mailBody;
 @property (nonatomic, readonly) NSData *mailAttachment;
-@property (nonatomic, assign) bool previousNavigationBarHiddenState;
+@property (nonatomic, assign) BOOL previousNavigationBarHiddenState;
 @end
 
 @implementation CTFeedbackViewController
@@ -236,21 +236,21 @@ typedef NS_ENUM(NSInteger, CTFeedbackSection){
 {
     NSMutableArray *result = [NSMutableArray array];
 
-    if (!self.hideAppNameCell) {
+    if (!self.hidesAppNameCell) {
         CTFeedbackInfoCellItem *nameItem = [CTFeedbackInfoCellItem new];
         nameItem.title = CTFBLocalizedString(@"Name");
         nameItem.value = self.appName;
         [result addObject:nameItem];
     }
 
-    if (!self.hideAppVersionCell) {
+    if (!self.hidesAppVersionCell) {
         CTFeedbackInfoCellItem *versionItem = [CTFeedbackInfoCellItem new];
         versionItem.title = CTFBLocalizedString(@"Version");
         versionItem.value = self.appVersion;
         [result addObject:versionItem];
     }
 
-    if (!self.hideAppBuildCell) {
+    if (!self.hidesAppBuildCell) {
         CTFeedbackInfoCellItem *buildItem = [CTFeedbackInfoCellItem new];
         buildItem.title = CTFBLocalizedString(@"Build");
         buildItem.value = self.appBuild;
