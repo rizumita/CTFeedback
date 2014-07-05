@@ -22,6 +22,9 @@
  */
 @property (nonatomic, strong) NSString *selectedTopic;
 
+@property (nonatomic, assign) bool hideAppNameCell;
+@property (nonatomic, assign) bool hideAppVersionCell;
+@property (nonatomic, assign) bool hideAppBuildCell;
 
 @property (nonatomic, readonly) NSString *platformString;
 @property (nonatomic, readonly) NSString *systemVersion;

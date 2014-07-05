@@ -37,9 +37,15 @@ typedef NS_ENUM(NSInteger, CTFeedbackSection){
 @property (nonatomic, readonly) NSString *mailSubject;
 @property (nonatomic, readonly) NSString *mailBody;
 @property (nonatomic, readonly) NSData *mailAttachment;
+@property (nonatomic, assign) bool previousNavigationBarHiddenState;
 @end
 
 @implementation CTFeedbackViewController
+
+- (void) viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    self.navigationController.navigationBarHidden = self.previousNavigationBarHiddenState;
+}
 
 + (CTFeedbackViewController *)controllerWithTopics:(NSArray *)topics localizedTopics:(NSArray *)localizedTopics
 {
@@ -93,9 +99,13 @@ typedef NS_ENUM(NSInteger, CTFeedbackSection){
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:CTFBLocalizedString(@"Mail") style:UIBarButtonItemStylePlain target:self action:@selector(sendButtonTapped:)];
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
+- (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    
+    self.previousNavigationBarHiddenState = self.navigationController.navigationBarHidden;
+    if (self.navigationController.navigationBarHidden) {
+        self.navigationController.navigationBarHidden = NO;
+    }
 
     if (self.presentingViewController.presentedViewController) {
         self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelButtonTapped:)];
@@ -226,20 +236,26 @@ typedef NS_ENUM(NSInteger, CTFeedbackSection){
 {
     NSMutableArray *result = [NSMutableArray array];
 
-    CTFeedbackInfoCellItem *nameItem = [CTFeedbackInfoCellItem new];
-    nameItem.title = CTFBLocalizedString(@"Name");
-    nameItem.value = self.appName;
-    [result addObject:nameItem];
+    if (!self.hideAppNameCell) {
+        CTFeedbackInfoCellItem *nameItem = [CTFeedbackInfoCellItem new];
+        nameItem.title = CTFBLocalizedString(@"Name");
+        nameItem.value = self.appName;
+        [result addObject:nameItem];
+    }
 
-    CTFeedbackInfoCellItem *versionItem = [CTFeedbackInfoCellItem new];
-    versionItem.title = CTFBLocalizedString(@"Version");
-    versionItem.value = self.appVersion;
-    [result addObject:versionItem];
+    if (!self.hideAppVersionCell) {
+        CTFeedbackInfoCellItem *versionItem = [CTFeedbackInfoCellItem new];
+        versionItem.title = CTFBLocalizedString(@"Version");
+        versionItem.value = self.appVersion;
+        [result addObject:versionItem];
+    }
 
-    CTFeedbackInfoCellItem *buildItem = [CTFeedbackInfoCellItem new];
-    buildItem.title = CTFBLocalizedString(@"Build");
-    buildItem.value = self.appBuild;
-    [result addObject:buildItem];
+    if (!self.hideAppBuildCell) {
+        CTFeedbackInfoCellItem *buildItem = [CTFeedbackInfoCellItem new];
+        buildItem.title = CTFBLocalizedString(@"Build");
+        buildItem.value = self.appBuild;
+        [result addObject:buildItem];
+    }
 
     return result.copy;
 }
