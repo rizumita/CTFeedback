@@ -214,7 +214,6 @@
 		6AEC615E1821D19D00B6DB37 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				F83DBCDA18F5C44300C0B601 /* PlatformNames.plist */,
 				6AEC615F1821D19D00B6DB37 /* CTFeedbackViewController.h */,
 				6AEC61601821D19D00B6DB37 /* CTFeedbackViewController.m */,
 				6A3F554C18222FB400217253 /* CTFeedbackCell.h */,
@@ -233,6 +232,7 @@
 		6AEC61611821D19D00B6DB37 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F83DBCDA18F5C44300C0B601 /* PlatformNames.plist */,
 				6AEC61841821FBF800B6DB37 /* CTFeedbackLocalizable.strings */,
 			);
 			name = Resources;
