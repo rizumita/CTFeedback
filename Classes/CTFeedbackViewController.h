@@ -12,7 +12,11 @@
 @class CTFeedbackTopicCellItem;
 @class CTFeedbackContentCellItem;
 
+@protocol CTFeedbackViewControllerDelegate;
+
 @interface CTFeedbackViewController : UITableViewController <MFMailComposeViewControllerDelegate>
+
+@property (weak) id <CTFeedbackViewControllerDelegate> delegate;
 
 @property (nonatomic, strong) NSArray *topics;
 @property (nonatomic, strong) NSArray *localizedTopics;
@@ -48,5 +52,11 @@
 + (NSArray *)defaultLocalizedTopics;
 
 - (instancetype)initWithTopics:(NSArray *)topics localizedTopics:(NSArray *)localizedTopics;
+
+@end
+
+@protocol CTFeedbackViewControllerDelegate <NSObject>
+@optional
+- (void)feedbackViewController:(CTFeedbackViewController *)controller didFinishWithMailComposeResult:(MFMailComposeResult)result error:(NSError *)error;
 
 @end

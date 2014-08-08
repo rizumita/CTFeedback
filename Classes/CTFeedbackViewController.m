@@ -462,6 +462,10 @@ static NSString * const ATTACHMENT_FILENAME = @"screenshot.jpg";
         } else {
             [self.navigationController popViewControllerAnimated:YES];
         }
+        
+        if ([self.delegate respondsToSelector:@selector(feedbackViewController:didFinishWithMailComposeResult:error:)]) {
+            [self.delegate feedbackViewController:self didFinishWithMailComposeResult:result error:error];
+        }
     };
 
     if (result == MFMailComposeResultCancelled) {
