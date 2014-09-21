@@ -283,7 +283,9 @@ typedef NS_ENUM(NSInteger, CTFeedbackSection){
     
     // Reading a file with platform names
     // http://theiphonewiki.com/wiki/Models
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"PlatformNames.plist" ofType:@""];
+    NSString *bundlePath = [[NSBundle mainBundle] pathForResource:@"CTFeedback" ofType:@"bundle"];
+    NSBundle *bundle = [NSBundle bundleWithPath:bundlePath];
+    NSString *filePath = [bundle pathForResource:@"PlatformNames" ofType:@"plist"];
     NSDictionary *platformNamesDic = [NSDictionary dictionaryWithContentsOfFile:filePath];
     
     // Changing a platform name to a human readable version
