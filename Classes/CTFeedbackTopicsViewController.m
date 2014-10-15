@@ -7,6 +7,7 @@
 //
 
 #import "CTFeedbackTopicsViewController.h"
+#import "NSBundle+CTFeedback.h"
 
 static NSString *CTFeedbackTopicsViewControllerCellIdentifier = @"Cell";
 
@@ -29,7 +30,7 @@ static NSString *CTFeedbackTopicsViewControllerCellIdentifier = @"Cell";
 {
     [super viewDidLoad];
 
-    self.title = NSLocalizedStringFromTable(@"Topics", @"CTFeedbackLocalizable", @"Topics");
+    self.title = CTFBLocalizedString(@"Topics");
 
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:CTFeedbackTopicsViewControllerCellIdentifier];
 }
