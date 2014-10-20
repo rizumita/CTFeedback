@@ -4,6 +4,7 @@
 
 
 #import "CTFeedbackCellItem.h"
+#import "NSBundle+CTFeedback.h"
 
 #define ContentCellHeight 100
 
@@ -53,7 +54,7 @@
 {
     self = [super init];
     if (self) {
-        self.title = NSLocalizedStringFromTable(@"Topic", @"CTFeedbackLocalizable", @"Topic");
+        self.title = CTFBLocalizedString(@"Topic");
     }
     return self;
 }

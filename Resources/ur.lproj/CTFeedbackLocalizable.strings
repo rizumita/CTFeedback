@@ -1,0 +1,51 @@
+/* Localizable.strings
+  CTFeedbackDemo
+
+  Created by Ryoichi Izumita on 2013/10/31.
+  Copyright (c) 2013 CAPH. All rights reserved. */
+
+"Question" = "سوال";
+
+"Request" = "درخواست";
+
+"Bug Report" = "بَگ رپورٹ";
+
+"Other" = "دیگر";
+
+"Device" = "آلہ";
+
+"iOS" = "آئی او ایس";
+
+"Name" = "نام";
+
+"Version" = "ورژن";
+
+"Build" = "ساخت";
+
+"Device Info" = "معلوماتِ آلہ";
+
+"App Info" = "معلوماتِ اطلاق";
+
+"Feedback" = "رائے";
+
+"Topic" = "موضوع";
+
+"Topics" = "موضوعات";
+
+"Error" = "غلطی";
+
+"Mail" = "میل";
+
+"Mail no configuration"="آپ کے پاس جائز ای میل کھاتہ نہیں ہے";
+
+"Dismiss"="منسوخ";
+
+"Additional Info"="اضافی معلومات";
+
+"Additional detail"="رائے کا منسلکہ(تصویر) منتخب کیجیے";
+
+"Cancel"="منسوخ";
+
+"Camera"="کیمرہ";
+
+"PhotoLibrary"="البم سے منتخب کیجیے";
