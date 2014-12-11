@@ -1,0 +1,51 @@
+/* Localizable.strings
+  CTFeedbackDemo
+
+  Created by Ryoichi Izumita on 2013/10/31.
+  Copyright (c) 2013 CAPH. All rights reserved. */
+
+"Question" = "Питање";
+
+"Request" = "Захтјев";
+
+"Bug Report" = "Грешка";
+
+"Other" = "Друго";
+
+"Device" = "Уређај";
+
+"iOS" = "iOS";
+
+"Name" = "Име";
+
+"Version" = "Верзија";
+
+"Build" = "Подверзија";
+
+"Device Info" = "Информације о иређају";
+
+"App Info" = "Информације о програму";
+
+"Feedback" = "Повратна информација";
+
+"Topic" = "Тема";
+
+"Topics" = "Теме";
+
+"Error" = "Грешка";
+
+"Mail" = "Е-маил";
+
+"Mail no configuration"="Немате подешен е-маил рачун";
+
+"Dismiss"="Затвори";
+
+"Additional Info"="Додатне информације";
+
+"Additional detail"="Изаберите прилог (слику)";
+
+"Cancel"="Откажи";
+
+"Camera"="Камера";
+
+"PhotoLibrary"="Изаберите из албума";
