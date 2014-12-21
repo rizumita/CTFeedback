@@ -100,6 +100,9 @@
 		CB8767F3272405CCC42F1755 /* CTFeedbackCellItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTFeedbackCellItem.h; sourceTree = "<group>"; };
 		CB876BD696F2B66A829AA415 /* NSBundle+CTFeedback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+CTFeedback.h"; sourceTree = "<group>"; };
 		D16DCD50183C8D300025189E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/CTFeedbackLocalizable.strings"; sourceTree = "<group>"; };
+		EF0827E71A39E87300A6BDE3 /* bs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = bs; path = bs.lproj/CTFeedbackLocalizable.strings; sourceTree = "<group>"; };
+		EF0827E81A39E8C700A6BDE3 /* hr-HR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "hr-HR"; path = "hr-HR.lproj/CTFeedbackLocalizable.strings"; sourceTree = "<group>"; };
+		EF0827E91A39E97700A6BDE3 /* sr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sr; path = sr.lproj/CTFeedbackLocalizable.strings; sourceTree = "<group>"; };
 		F83DBCDA18F5C44300C0B601 /* PlatformNames.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PlatformNames.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -311,6 +314,9 @@
 				de,
 				ko,
 				ur,
+				bs,
+				"hr-HR",
+				sr,
 			);
 			mainGroup = 6AEC61191821D17600B6DB37;
 			productRefGroup = 6AEC61231821D17600B6DB37 /* Products */;
@@ -440,6 +446,9 @@
 				788BC1F218AF8A8E0071B37C /* de */,
 				133D3223195BE10D00E0D7C8 /* ko */,
 				577A223119EE5F0500C7A0B2 /* ur */,
+				EF0827E71A39E87300A6BDE3 /* bs */,
+				EF0827E81A39E8C700A6BDE3 /* hr-HR */,
+				EF0827E91A39E97700A6BDE3 /* sr */,
 			);
 			name = CTFeedbackLocalizable.strings;
 			sourceTree = "<group>";
