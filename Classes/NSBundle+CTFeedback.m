@@ -5,6 +5,8 @@
 
 #import "NSBundle+CTFeedback.h"
 
+#import "CTFeedbackViewController.h"
+
 @implementation NSBundle (CTFeedback)
 
 + (NSBundle *)feedbackBundle
@@ -13,7 +15,8 @@
     static dispatch_once_t predicate;
 
     dispatch_once(&predicate, ^{
-        NSURL *bundleURL = [[NSBundle mainBundle] URLForResource:@"CTFeedback" withExtension:@"bundle"];
+        NSBundle *classBundle = [NSBundle bundleForClass:[CTFeedbackViewController class]];
+        NSURL *bundleURL = [classBundle URLForResource:@"CTFeedback" withExtension:@"bundle"];
 
         if (bundleURL) {
             bundle = [NSBundle bundleWithURL:bundleURL];
