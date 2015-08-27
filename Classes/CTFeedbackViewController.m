@@ -380,13 +380,28 @@ static NSString * const ATTACHMENT_FILENAME = @"screenshot.jpg";
             [controller addAttachmentData:self.mailAttachment mimeType:MIME_TYPE_JPEG fileName:ATTACHMENT_FILENAME];
         }
         [self presentViewController:controller animated:YES completion:nil];
-    }else{
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:CTFBLocalizedString(@"Error")
-                                                        message:CTFBLocalizedString(@"Mail no configuration")
-                                                       delegate:nil
-                                              cancelButtonTitle:CTFBLocalizedString(@"Dismiss")
-                                              otherButtonTitles:nil];
-        [alert show];
+    } else {
+        if ([UIAlertController class]) {
+            UIAlertController *alert= [UIAlertController alertControllerWithTitle:CTFBLocalizedString(@"Error")
+                                                                          message:CTFBLocalizedString(@"Mail no configuration")
+                                                                   preferredStyle:UIAlertControllerStyleAlert];
+            
+            UIAlertAction *dismiss = [UIAlertAction actionWithTitle:CTFBLocalizedString(@"Dismiss")
+                                                              style:UIAlertActionStyleCancel
+                                                            handler:^(UIAlertAction *action) {
+                                                                [alert dismissViewControllerAnimated:YES completion:nil];
+                                                            }];
+            
+            [alert addAction:dismiss];
+            [self presentViewController:alert animated:YES completion:nil];
+        } else {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:CTFBLocalizedString(@"Error")
+                                                            message:CTFBLocalizedString(@"Mail no configuration")
+                                                           delegate:nil
+                                                  cancelButtonTitle:CTFBLocalizedString(@"Dismiss")
+                                                  otherButtonTitles:nil];
+            [alert show];
+        }
     }
 }
 
@@ -472,12 +487,27 @@ static NSString * const ATTACHMENT_FILENAME = @"screenshot.jpg";
     if (result == MFMailComposeResultCancelled) {
         completion = nil;
     } else if (result == MFMailComposeResultFailed && error) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:CTFBLocalizedString(@"Error")
-                                                        message:error.localizedDescription
-                                                       delegate:nil
-                                              cancelButtonTitle:CTFBLocalizedString(@"Dismiss")
-                                              otherButtonTitles:nil];
-        [alert show];
+        if ([UIAlertController class]) {
+            UIAlertController *alert= [UIAlertController alertControllerWithTitle:CTFBLocalizedString(@"Error")
+                                                                          message:error.localizedDescription
+                                                                   preferredStyle:UIAlertControllerStyleAlert];
+            
+            UIAlertAction *dismiss = [UIAlertAction actionWithTitle:CTFBLocalizedString(@"Dismiss")
+                                                              style:UIAlertActionStyleCancel
+                                                            handler:^(UIAlertAction *action) {
+                                                                [alert dismissViewControllerAnimated:YES completion:nil];
+                                                            }];
+            
+            [alert addAction:dismiss];
+            [self presentViewController:alert animated:YES completion:nil];
+        } else {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:CTFBLocalizedString(@"Error")
+                                                            message:error.localizedDescription
+                                                           delegate:nil
+                                                  cancelButtonTitle:CTFBLocalizedString(@"Dismiss")
+                                                  otherButtonTitles:nil];
+            [alert show];
+        }
     }
 
     [controller dismissViewControllerAnimated:YES completion:completion];
