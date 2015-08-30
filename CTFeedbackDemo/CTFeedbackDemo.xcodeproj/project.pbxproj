@@ -54,6 +54,7 @@
 		133D3223195BE10D00E0D7C8 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/CTFeedbackLocalizable.strings; sourceTree = "<group>"; };
 		133D3224195BE10D00E0D7C8 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		133D3225195BE10D00E0D7C8 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3DF043C01B7D2C1F00DF6316 /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/CTFeedbackLocalizable.strings; sourceTree = "<group>"; };
 		577A222F19EE5F0500C7A0B2 /* ur */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ur; path = ur.lproj/Main_iPhone.strings; sourceTree = "<group>"; };
 		577A223019EE5F0500C7A0B2 /* ur */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ur; path = ur.lproj/Main_iPad.strings; sourceTree = "<group>"; };
 		577A223119EE5F0500C7A0B2 /* ur */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ur; path = ur.lproj/CTFeedbackLocalizable.strings; sourceTree = "<group>"; };
@@ -317,6 +318,7 @@
 				bs,
 				"hr-HR",
 				sr,
+				da,
 			);
 			mainGroup = 6AEC61191821D17600B6DB37;
 			productRefGroup = 6AEC61231821D17600B6DB37 /* Products */;
@@ -449,6 +451,7 @@
 				EF0827E71A39E87300A6BDE3 /* bs */,
 				EF0827E81A39E8C700A6BDE3 /* hr-HR */,
 				EF0827E91A39E97700A6BDE3 /* sr */,
+				3DF043C01B7D2C1F00DF6316 /* da */,
 			);
 			name = CTFeedbackLocalizable.strings;
 			sourceTree = "<group>";

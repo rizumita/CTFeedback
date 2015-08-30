@@ -1,0 +1,51 @@
+/* Localizable.strings
+  CTFeedbackDemo
+
+  Created by Ryoichi Izumita on 2013/10/31.
+  Copyright (c) 2013 CAPH. All rights reserved. */
+
+"Question" = "Spørgsmål";
+
+"Request" = "Forespørgsel";
+
+"Bug Report" = "Fejlmelding";
+
+"Other" = "Andet";
+
+"Device" = "Enhed";
+
+"iOS" = "iOS";
+
+"Name" = "Navn";
+
+"Version" = "Version";
+
+"Build" = "Build";
+
+"Device Info" = "Information om enheden";
+
+"App Info" = "Information om appen";
+
+"Feedback" = "Feedback";
+
+"Topic" = "Emne";
+
+"Topics" = "Emner";
+
+"Error" = "Fejl";
+
+"Mail" = "Send";
+
+"Mail no configuration"="Du har ikke en gyldig email konto";
+
+"Dismiss"="Annuller";
+
+"Additional Info"="Yderligere information";
+
+"Additional detail"="Vælg et billede";
+
+"Cancel"="Annuller";
+
+"Camera"="Kamera";
+
+"PhotoLibrary"="Vælg fra album";
