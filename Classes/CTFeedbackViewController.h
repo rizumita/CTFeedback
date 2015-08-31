@@ -26,9 +26,12 @@
  */
 @property (nonatomic, strong) NSString *selectedTopic;
 
+@property (nonatomic, assign) BOOL showsUserEmail;
 @property (nonatomic, assign) BOOL hidesAppNameCell;
 @property (nonatomic, assign) BOOL hidesAppVersionCell;
 @property (nonatomic, assign) BOOL hidesAppBuildCell;
+@property (nonatomic, assign) BOOL hidesAdditionalContent;
+@property (nonatomic, assign) BOOL useCustomCallback;
 
 @property (nonatomic, readonly) NSString *platformString;
 @property (nonatomic, readonly) NSString *systemVersion;
@@ -58,5 +61,6 @@
 @protocol CTFeedbackViewControllerDelegate <NSObject>
 @optional
 - (void)feedbackViewController:(CTFeedbackViewController *)controller didFinishWithMailComposeResult:(MFMailComposeResult)result error:(NSError *)error;
+- (void)feedbackViewController:(CTFeedbackViewController *)controller didFinishWithCustomCallback:(NSString *)email topic:(NSString *)topic content:(NSString *)content;
 
 @end
