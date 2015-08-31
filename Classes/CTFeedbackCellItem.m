@@ -119,6 +119,33 @@
 
 @end
 
+@implementation CTFeedbackFieldCellItem
+
+- (id)init
+{
+    self = [super init];
+    if (self) {
+        self.textField = [[UITextField alloc] initWithFrame:CGRectMake(15, 0, 320 - 30, self.cellHeight)];
+        self.textField.delegate = self;
+        self.textField.font = [UIFont systemFontOfSize:14];
+        self.textField.backgroundColor = [UIColor clearColor];
+    }
+    return self;
+}
+
++ (UITableViewCellStyle)cellStyle
+{
+    return UITableViewCellStyleValue1;
+}
+
+- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
+{
+    [super configureCell:cell atIndexPath:indexPath];
+
+    [cell.contentView addSubview:self.textField];
+}
+
+@end
 
 @implementation CTFeedbackInfoCellItem
 
