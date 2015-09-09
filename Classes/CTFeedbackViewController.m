@@ -300,7 +300,9 @@ typedef NS_ENUM(NSInteger, CTFeedbackSection){
 
 - (NSString *)appName
 {
-    return [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleDisplayName"];
+    return [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleDisplayName"]?
+    [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleDisplayName"]:
+    [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleName"];
 }
 
 - (NSString *)appVersion
