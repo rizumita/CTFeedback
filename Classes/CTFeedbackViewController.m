@@ -382,7 +382,7 @@ static NSString * const ATTACHMENT_FILENAME = @"screenshot.jpg";
     if (self.useCustomCallback) {
         NSAssert(self.delegate, @"No delegate provided");
         if (self.delegate && [self.delegate respondsToSelector:@selector(feedbackViewController:didFinishWithCustomCallback:topic:content:)]) {
-            [self.delegate feedbackViewController:self didFinishWithCustomCallback:self.emailCellItem.textField.text topic:self.mailSubject content:self.mailBody];
+            [self.delegate feedbackViewController:self didFinishWithCustomCallback:self.emailCellItem.textField.text topic:self.mailSubject content:self.contentCellItem.textView.text ? self.mailBody : nil];
         }
     } else if ([MFMailComposeViewController canSendMail]) {
         MFMailComposeViewController *controller = [[MFMailComposeViewController alloc] init];
