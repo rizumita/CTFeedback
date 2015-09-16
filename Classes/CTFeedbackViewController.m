@@ -108,9 +108,16 @@ typedef NS_ENUM(NSInteger, CTFeedbackSection){
         self.navigationController.navigationBarHidden = NO;
     }
 
-    if (self.presentingViewController.presentedViewController) {
-        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelButtonTapped:)];
-    }
+	if(self.navigationController != nil){
+		if( [self.navigationController viewControllers][0] == self){
+			self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelButtonTapped:)];
+		}else{
+			// Keep the standard back button instead of "Cancel"
+			self.navigationItem.leftBarButtonItem = nil;
+		}
+	} else {
+		self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelButtonTapped:)];
+	}
 }
 
 - (void)didReceiveMemoryWarning
