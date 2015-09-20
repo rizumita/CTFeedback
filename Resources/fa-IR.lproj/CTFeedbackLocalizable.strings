@@ -1,0 +1,51 @@
+/* Localizable.strings
+  CTFeedbackDemo
+
+  Created by Ryoichi Izumita on 2013/10/31.
+  Copyright (c) 2013 CAPH. All rights reserved. */
+
+"Question" = "سوال";
+
+"Request" = "درخواست";
+
+"Bug Report" = "گزارش مشکل";
+
+"Other" = "دیگر";
+
+"Device" = "دستگاه";
+
+"iOS" = "آی‌او‌اس";
+
+"Name" = "نام";
+
+"Version" = "نسخه";
+
+"Build" = "ساخت";
+
+"Device Info" = "اطلاعات دستگاه";
+
+"App Info" = "اطلاعات برنامه";
+
+"Feedback" = "ارسال نظر";
+
+"Topic" = "موضوع";
+
+"Topics" = "موضوع‌ها";
+
+"Error" = "خطا";
+
+"Mail" = "ای‌میل";
+
+"Mail no configuration"="شما ایمیل دستگاه خود را تنظیم نکرده‌اید";
+
+"Dismiss"="بستن";
+
+"Additional Info"="اطلاعات اضافه";
+
+"Additional detail"="پیوست خود را انتخاب کنید (تصویر)";
+
+"Cancel"="لغو";
+
+"Camera"="دوربین";
+
+"PhotoLibrary"="از آلبوم خود انتخاب کنید";
