@@ -96,6 +96,11 @@
 		6AEC61851821FBF800B6DB37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/CTFeedbackLocalizable.strings; sourceTree = "<group>"; };
 		6AEE428F189A10FB009C0138 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/CTFeedbackLocalizable.strings"; sourceTree = "<group>"; };
 		788BC1F218AF8A8E0071B37C /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/CTFeedbackLocalizable.strings; sourceTree = "<group>"; };
+		CB02360E1BAF562100B90D19 /* fa-IR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "fa-IR"; path = "fa-IR.lproj/Main_iPhone.strings"; sourceTree = "<group>"; };
+		CB02360F1BAF562100B90D19 /* fa-IR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "fa-IR"; path = "fa-IR.lproj/Main_iPad.strings"; sourceTree = "<group>"; };
+		CB0236101BAF562100B90D19 /* fa-IR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "fa-IR"; path = "fa-IR.lproj/CTFeedbackLocalizable.strings"; sourceTree = "<group>"; };
+		CB0236111BAF562100B90D19 /* fa-IR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "fa-IR"; path = "fa-IR.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		CB0236121BAF562100B90D19 /* fa-IR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "fa-IR"; path = "fa-IR.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		CB876438D25C52E9455F30EB /* CTFeedbackCellItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTFeedbackCellItem.m; sourceTree = "<group>"; };
 		CB876691CB3B7AC00E58896D /* NSBundle+CTFeedback.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+CTFeedback.m"; sourceTree = "<group>"; };
 		CB8767F3272405CCC42F1755 /* CTFeedbackCellItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTFeedbackCellItem.h; sourceTree = "<group>"; };
@@ -319,6 +324,7 @@
 				"hr-HR",
 				sr,
 				da,
+				"fa-IR",
 			);
 			mainGroup = 6AEC61191821D17600B6DB37;
 			productRefGroup = 6AEC61231821D17600B6DB37 /* Products */;
@@ -402,6 +408,7 @@
 				6AEC612F1821D17600B6DB37 /* en */,
 				133D3224195BE10D00E0D7C8 /* ko */,
 				577A223219EE5F0600C7A0B2 /* ur */,
+				CB0236111BAF562100B90D19 /* fa-IR */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -412,6 +419,7 @@
 				6AEC61381821D17600B6DB37 /* Base */,
 				133D3221195BE10D00E0D7C8 /* ko */,
 				577A222F19EE5F0500C7A0B2 /* ur */,
+				CB02360E1BAF562100B90D19 /* fa-IR */,
 			);
 			name = Main_iPhone.storyboard;
 			sourceTree = "<group>";
@@ -422,6 +430,7 @@
 				6AEC613B1821D17600B6DB37 /* Base */,
 				133D3222195BE10D00E0D7C8 /* ko */,
 				577A223019EE5F0500C7A0B2 /* ur */,
+				CB02360F1BAF562100B90D19 /* fa-IR */,
 			);
 			name = Main_iPad.storyboard;
 			sourceTree = "<group>";
@@ -432,6 +441,7 @@
 				6AEC61511821D17600B6DB37 /* en */,
 				133D3225195BE10D00E0D7C8 /* ko */,
 				577A223319EE5F0600C7A0B2 /* ur */,
+				CB0236121BAF562100B90D19 /* fa-IR */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -452,6 +462,7 @@
 				EF0827E81A39E8C700A6BDE3 /* hr-HR */,
 				EF0827E91A39E97700A6BDE3 /* sr */,
 				3DF043C01B7D2C1F00DF6316 /* da */,
+				CB0236101BAF562100B90D19 /* fa-IR */,
 			);
 			name = CTFeedbackLocalizable.strings;
 			sourceTree = "<group>";
