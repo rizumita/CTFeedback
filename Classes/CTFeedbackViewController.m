@@ -108,7 +108,7 @@ typedef NS_ENUM(NSInteger, CTFeedbackSection){
     }
 
     if (self.presentingViewController.presentedViewController) {
-        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelButtonTapped:)];
+        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"بستن" style:UIBarButtonItemStylePlain target:self action:@selector(cancelButtonTapped:)];
     }
 }
 
