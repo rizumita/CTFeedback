@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="fVr-u0-bsW">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="fVr-u0-bsW">
     <dependencies>
-        <deployment defaultVersion="1536" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3746"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -11,6 +11,7 @@
                 <navigationController definesPresentationContext="YES" id="fVr-u0-bsW" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="5U6-FI-O5o">
                         <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
                     </navigationBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="LiJ-lE-enh"/>
@@ -20,7 +21,7 @@
             </objects>
             <point key="canvasLocation" x="-468" y="78"/>
         </scene>
-        <!--View Controller-->
+        <!--CTFeedback Demo-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="CTViewController" sceneMemberID="viewController">
@@ -32,9 +33,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GVv-jM-4Ku">
-                                <rect key="frame" x="308" y="497" width="152" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GVv-jM-4Ku">
+                                <rect key="frame" x="350" y="472" width="68" height="30"/>
+                                <animations/>
                                 <state key="normal" title="Feedback">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -42,13 +43,29 @@
                                     <action selector="feedbackButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qpa-4m-sLg"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="giX-T5-FHZ">
+                                <rect key="frame" x="318" y="552" width="132" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Feedback (custom)"/>
+                                <connections>
+                                    <action selector="customFeebackButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ELk-9R-hlF"/>
+                                </connections>
+                            </button>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="giX-T5-FHZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="08K-kz-q5p"/>
+                            <constraint firstItem="GVv-jM-4Ku" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-25" id="7BE-sr-0TG"/>
+                            <constraint firstItem="giX-T5-FHZ" firstAttribute="top" secondItem="GVv-jM-4Ku" secondAttribute="bottom" constant="50" id="WsK-Qb-JOn"/>
+                            <constraint firstItem="GVv-jM-4Ku" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pTm-nl-GvL"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="pBO-1U-1Mr"/>
+                    <navigationItem key="navigationItem" title="CTFeedback Demo" id="tmU-JK-A9P"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="469" y="78"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

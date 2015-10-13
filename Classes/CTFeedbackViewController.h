@@ -61,6 +61,6 @@
 @protocol CTFeedbackViewControllerDelegate <NSObject>
 @optional
 - (void)feedbackViewController:(CTFeedbackViewController *)controller didFinishWithMailComposeResult:(MFMailComposeResult)result error:(NSError *)error;
-- (void)feedbackViewController:(CTFeedbackViewController *)controller didFinishWithCustomCallback:(NSString *)email topic:(NSString *)topic content:(NSString *)content;
+- (void)feedbackViewController:(CTFeedbackViewController *)controller didFinishWithCustomCallback:(NSString *)email topic:(NSString *)topic content:(NSString *)content attachment:(UIImage *)attachment;
 
 @end
