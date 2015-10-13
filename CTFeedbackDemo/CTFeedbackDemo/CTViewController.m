@@ -9,7 +9,7 @@
 #import "CTViewController.h"
 #import "CTFeedbackViewController.h"
 
-@interface CTViewController ()
+@interface CTViewController () <CTFeedbackViewControllerDelegate>
 
 @end
 
@@ -30,7 +30,10 @@
 - (IBAction)feedbackButtonTapped:(id)sender
 {
     CTFeedbackViewController *feedbackViewController = [CTFeedbackViewController controllerWithTopics:CTFeedbackViewController.defaultTopics localizedTopics:CTFeedbackViewController.defaultLocalizedTopics];
-    feedbackViewController.toRecipients = @[@"ctfeedback@example.com"];
+    feedbackViewController.showsUserEmail = YES;
+    feedbackViewController.hidesAdditionalContent = YES;
+    feedbackViewController.useCustomCallback = YES;
+    feedbackViewController.delegate = self;
     [self.navigationController pushViewController:feedbackViewController animated:YES];
 }
 
@@ -40,6 +43,13 @@
     feedbackViewController.toRecipients = @[@"ctfeedback@example.com"];
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:feedbackViewController];
     [self presentViewController:navigationController animated:YES completion:nil];
+}
+
+- (void)feedbackViewController:(CTFeedbackViewController *)controller didFinishWithCustomCallback:(NSString *)email topic:(NSString *)topic content:(NSString *)content
+{
+    NSLog(@"User email: %@", email);
+    NSLog(@"Topic: %@", topic);
+    NSLog(@"Content: %@", content);
 }
 
 @end
