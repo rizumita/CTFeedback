@@ -49,6 +49,35 @@ Sample Output
 	<tr><td>Build:</td><td><b>1.0.1</b></td></tr>
 </table>
 
+Custom Feedback via your server API
+----------
+
+You also can use your own server API to send feedback.
+It can be useful if user has no E-mail account on device or else.
+
+To use custom callback set `useCustomCallback` to `YES`.
+If you want to let user input his E-mail, set `showUserEmail` to `YES`.
+
+
+```
+CTFeedbackViewController *feedbackViewController = [CTFeedbackViewController controllerWithTopics:CTFeedbackViewController.defaultTopics localizedTopics:CTFeedbackViewController.defaultLocalizedTopics];
+feedbackViewController.showsUserEmail = YES;
+feedbackViewController.useCustomCallback = YES;
+feedbackViewController.delegate = self;
+[self.navigationController pushViewController:feedbackViewController animated:YES];
+```
+
+Also implement delegate function: 
+```
+- (void)feedbackViewController:(CTFeedbackViewController *)controller
+   didFinishWithCustomCallback:(NSString *)email
+                         topic:(NSString *)topic
+                       content:(NSString *)content
+                    attachment:(UIImage *)attachment
+```
+
+See demo for more details.
+
 License
 ----------
 

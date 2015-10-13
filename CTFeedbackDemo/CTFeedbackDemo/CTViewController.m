@@ -30,10 +30,6 @@
 - (IBAction)feedbackButtonTapped:(id)sender
 {
     CTFeedbackViewController *feedbackViewController = [CTFeedbackViewController controllerWithTopics:CTFeedbackViewController.defaultTopics localizedTopics:CTFeedbackViewController.defaultLocalizedTopics];
-    feedbackViewController.showsUserEmail = YES;
-    feedbackViewController.hidesAdditionalContent = YES;
-    feedbackViewController.useCustomCallback = YES;
-    feedbackViewController.delegate = self;
     [self.navigationController pushViewController:feedbackViewController animated:YES];
 }
 
@@ -45,11 +41,41 @@
     [self presentViewController:navigationController animated:YES completion:nil];
 }
 
-- (void)feedbackViewController:(CTFeedbackViewController *)controller didFinishWithCustomCallback:(NSString *)email topic:(NSString *)topic content:(NSString *)content
+- (IBAction)customFeebackButtonTapped:(id)sender
 {
+    CTFeedbackViewController *feedbackViewController = [CTFeedbackViewController controllerWithTopics:CTFeedbackViewController.defaultTopics localizedTopics:CTFeedbackViewController.defaultLocalizedTopics];
+    feedbackViewController.showsUserEmail = YES;
+    feedbackViewController.useCustomCallback = YES;
+    feedbackViewController.delegate = self;
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:feedbackViewController];
+    navigationController.modalPresentationStyle = UIModalPresentationFormSheet;
+    [self presentViewController:navigationController animated:YES completion:nil];
+}
+
+- (void)feedbackViewController:(CTFeedbackViewController *)controller
+   didFinishWithCustomCallback:(NSString *)email
+                         topic:(NSString *)topic
+                       content:(NSString *)content
+                    attachment:(UIImage *)attachment
+{
+    if (!email.length) {
+        [[[UIAlertView alloc] initWithTitle:@"Error" message:@"Enter E-mail!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+        return;
+    }
+
+    if (!content.length) {
+        [[[UIAlertView alloc] initWithTitle:@"Error" message:@"Enter your message!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+        return;
+    }
+
     NSLog(@"User email: %@", email);
     NSLog(@"Topic: %@", topic);
     NSLog(@"Content: %@", content);
+    NSLog(@"Attachment: %@", attachment);
+    
+    [self.navigationController popViewControllerAnimated:YES];
+    
+    [[[UIAlertView alloc] initWithTitle:@"Success" message:@"Your message has been send!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
 }
 
 @end
