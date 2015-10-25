@@ -30,10 +30,15 @@
 @interface CTFeedbackContentCellItem : CTFeedbackCellItem <UITextViewDelegate>
 
 @property (nonatomic, copy) NSString *content;
-
 @property (nonatomic, strong) UITextView *textView;
+
 @end
 
+@interface CTFeedbackFieldCellItem : CTFeedbackCellItem <UITextFieldDelegate>
+
+@property (nonatomic, strong) UITextField *textField;
+
+@end
 
 @interface CTFeedbackInfoCellItem : CTFeedbackCellItem
 
@@ -47,4 +52,5 @@
 @property (nonatomic, strong) UIImage *screenImage;
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *value;
+
 @end
