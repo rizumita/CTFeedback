@@ -592,7 +592,7 @@ static NSString * const ATTACHMENT_FILENAME = @"screenshot.jpg";
     [self presentViewController:controller animated:YES completion:nil];
 }
 
-- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+- (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex {
     UIImagePickerControllerSourceType sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
     if (buttonIndex == 0) {
         // camera
