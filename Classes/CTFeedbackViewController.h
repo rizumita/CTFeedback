@@ -25,7 +25,7 @@
  * selectedTopic's default value is first item of topics.
  */
 @property (nonatomic, strong) NSString *selectedTopic;
-@property (nonatomic, assign) NSString *mailSubject;
+@property (nonatomic, strong) NSString *mailSubject;
 
 @property (nonatomic, assign) BOOL showsUserEmail;
 @property (nonatomic, assign) BOOL hidesTopicCell;
