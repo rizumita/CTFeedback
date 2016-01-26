@@ -11,6 +11,6 @@
 @interface CTViewController : UIViewController
 
 - (IBAction)feedbackButtonTapped:(id)sender;
-
 - (IBAction)modalFeedbackButtonTapped:(id)sender;
+- (IBAction)simpleFeebackButtonTapped:(id)sender;
 @end

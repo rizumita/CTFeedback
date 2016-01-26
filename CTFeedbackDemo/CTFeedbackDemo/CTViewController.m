@@ -52,6 +52,20 @@
     [self presentViewController:navigationController animated:YES completion:nil];
 }
 
+- (IBAction)simpleFeebackButtonTapped:(id)sender
+{
+    CTFeedbackViewController *feedbackViewController = [CTFeedbackViewController controllerWithTopics:CTFeedbackViewController.defaultTopics localizedTopics:CTFeedbackViewController.defaultLocalizedTopics];
+    feedbackViewController.hidesAdditionalContent = YES;
+    feedbackViewController.hidesAppBuildCell = YES;
+    feedbackViewController.hidesAppNameCell = YES;
+    feedbackViewController.hidesAppVersionCell = YES;
+    feedbackViewController.hidesTopicCell = YES;
+    feedbackViewController.mailSubject = @"Simple Title";
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:feedbackViewController];
+    navigationController.modalPresentationStyle = UIModalPresentationFormSheet;
+    [self presentViewController:navigationController animated:YES completion:nil];
+}
+
 - (void)feedbackViewController:(CTFeedbackViewController *)controller
    didFinishWithCustomCallback:(NSString *)email
                          topic:(NSString *)topic
