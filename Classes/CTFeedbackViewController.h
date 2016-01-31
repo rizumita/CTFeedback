@@ -25,8 +25,10 @@
  * selectedTopic's default value is first item of topics.
  */
 @property (nonatomic, strong) NSString *selectedTopic;
+@property (nonatomic, strong) NSString *mailSubject;
 
 @property (nonatomic, assign) BOOL showsUserEmail;
+@property (nonatomic, assign) BOOL hidesTopicCell;
 @property (nonatomic, assign) BOOL hidesAppNameCell;
 @property (nonatomic, assign) BOOL hidesAppVersionCell;
 @property (nonatomic, assign) BOOL hidesAppBuildCell;
@@ -40,9 +42,7 @@
 @property (nonatomic, readonly) NSString *appBuild;
 
 @property (nonatomic, strong) NSArray *toRecipients;
-
 @property (nonatomic, strong) NSArray *ccRecipients;
-
 @property (nonatomic, strong) NSArray *bccRecipients;
 
 @property (nonatomic, strong) NSString *additionalDiagnosticContent;

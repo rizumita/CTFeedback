@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="ItC-AB-PrL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="ItC-AB-PrL">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -11,7 +11,6 @@
                 <navigationController definesPresentationContext="YES" id="ItC-AB-PrL" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="fxP-bc-pqy">
                         <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
                     </navigationBar>
                     <connections>
                         <segue destination="IOY-4q-hS1" kind="relationship" relationship="rootViewController" id="R0g-0N-UiT"/>
@@ -35,7 +34,6 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pcE-Bv-7Tw">
                                 <rect key="frame" x="126" y="269" width="68" height="30"/>
-                                <animations/>
                                 <state key="normal" title="Feedback">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -45,7 +43,6 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tta-LI-rSA">
                                 <rect key="frame" x="94" y="349" width="132" height="30"/>
-                                <animations/>
                                 <state key="normal" title="Feedback (custom)"/>
                                 <connections>
                                     <action selector="customFeebackButtonTapped:" destination="IOY-4q-hS1" eventType="touchUpInside" id="nuJ-fL-lka"/>
@@ -53,7 +50,6 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bbQ-vx-OLB">
                                 <rect key="frame" x="98" y="189" width="124" height="30"/>
-                                <animations/>
                                 <state key="normal" title="Feedback (modal)">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -61,12 +57,20 @@
                                     <action selector="modalFeedbackButtonTapped:" destination="IOY-4q-hS1" eventType="touchUpInside" id="P35-0c-pdM"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H4f-bf-BBE">
+                                <rect key="frame" x="97" y="429" width="126" height="30"/>
+                                <state key="normal" title="Feedback (simple)"/>
+                                <connections>
+                                    <action selector="simpleFeebackButtonTapped:" destination="IOY-4q-hS1" eventType="touchUpInside" id="pLg-ti-7XL"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Tta-LI-rSA" firstAttribute="centerX" secondItem="hGd-Su-Uts" secondAttribute="centerX" id="8cj-bb-fgP"/>
+                            <constraint firstItem="H4f-bf-BBE" firstAttribute="centerX" secondItem="hGd-Su-Uts" secondAttribute="centerX" id="N87-dc-Ecn"/>
                             <constraint firstItem="pcE-Bv-7Tw" firstAttribute="top" secondItem="bbQ-vx-OLB" secondAttribute="bottom" constant="50" id="R6t-MA-ZQg"/>
+                            <constraint firstItem="H4f-bf-BBE" firstAttribute="top" secondItem="Tta-LI-rSA" secondAttribute="bottom" constant="50" id="U4D-et-evP"/>
                             <constraint firstAttribute="centerX" secondItem="pcE-Bv-7Tw" secondAttribute="centerX" id="Uk9-pO-hwU"/>
                             <constraint firstItem="bbQ-vx-OLB" firstAttribute="centerX" secondItem="hGd-Su-Uts" secondAttribute="centerX" id="iT0-vc-j6E"/>
                             <constraint firstAttribute="centerY" secondItem="pcE-Bv-7Tw" secondAttribute="centerY" id="rbP-it-T78"/>
