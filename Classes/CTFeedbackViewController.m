@@ -37,7 +37,6 @@ typedef NS_ENUM(NSInteger, CTFeedbackSection){
 @property (nonatomic, strong) CTFeedbackContentCellItem *contentCellItem;
 @property (nonatomic, strong) CTFeedbackFieldCellItem *emailCellItem;
 @property (nonatomic, strong) CTFeedbackAdditionInfoCellItem *additionCellItem;
-@property (nonatomic, readonly) NSString *mailSubject;
 @property (nonatomic, readonly) NSString *mailBody;
 @property (nonatomic, readonly) NSData *mailAttachment;
 @property (nonatomic, assign) BOOL previousNavigationBarHiddenState;
@@ -178,9 +177,9 @@ typedef NS_ENUM(NSInteger, CTFeedbackSection){
 - (NSArray *)inputCellItems
 {
     NSMutableArray *result = [NSMutableArray array];
-
+    
     __weak CTFeedbackViewController *weakSelf = self;
-
+    
     self.topicCellItem = [CTFeedbackTopicCellItem new];
     self.topicCellItem.topic = self.localizedTopics[self.selectedTopicIndex];
     self.topicCellItem.action = ^(CTFeedbackViewController *sender) {
@@ -197,7 +196,9 @@ typedef NS_ENUM(NSInteger, CTFeedbackSection){
 
         [sender.navigationController pushViewController:topicsViewController animated:YES];
     };
-    [result addObject:self.topicCellItem];
+    if (!self.hidesTopicCell) {
+        [result addObject:self.topicCellItem];
+    }
 
     self.contentCellItem = [CTFeedbackContentCellItem new];
     [self.contentCellItem addObserver:self forKeyPath:@"cellHeight" options:NSKeyValueObservingOptionNew context:nil];
@@ -247,7 +248,7 @@ typedef NS_ENUM(NSInteger, CTFeedbackSection){
 - (NSArray *)appInfoCellItems
 {
     NSMutableArray *result = [NSMutableArray array];
-
+    
     if (!self.hidesAppNameCell) {
         CTFeedbackInfoCellItem *nameItem = [CTFeedbackInfoCellItem new];
         nameItem.title = CTFBLocalizedString(@"Name");
@@ -327,8 +328,11 @@ typedef NS_ENUM(NSInteger, CTFeedbackSection){
     return [[NSBundle mainBundle] objectForInfoDictionaryKey:(NSString *)kCFBundleVersionKey];
 }
 
-- (NSString *)mailSubject
+- (NSString *)_mailSubject
 {
+    if (self.mailSubject != nil && self.mailSubject.length > 0) {
+        return self.mailSubject;
+    }
     return [NSString stringWithFormat:@"%@: %@", self.appName, self.topics[self.selectedTopicIndex]];
 }
 
@@ -384,7 +388,7 @@ static NSString * const ATTACHMENT_FILENAME = @"screenshot.jpg";
     if (self.useCustomCallback) {
         NSAssert(self.delegate, @"No delegate provided");
         if (self.delegate && [self.delegate respondsToSelector:@selector(feedbackViewController:didFinishWithCustomCallback:topic:content:attachment:)]) {
-            [self.delegate feedbackViewController:self didFinishWithCustomCallback:self.emailCellItem.textField.text topic:self.mailSubject content:self.contentCellItem.textView.text.length ? self.mailBody : nil attachment:[UIImage imageWithData:self.mailAttachment]];
+            [self.delegate feedbackViewController:self didFinishWithCustomCallback:self.emailCellItem.textField.text topic:self._mailSubject content:self.contentCellItem.textView.text.length ? self.mailBody : nil attachment:[UIImage imageWithData:self.mailAttachment]];
         }
     } else if ([MFMailComposeViewController canSendMail]) {
         MFMailComposeViewController *controller = [[MFMailComposeViewController alloc] init];
@@ -392,7 +396,7 @@ static NSString * const ATTACHMENT_FILENAME = @"screenshot.jpg";
         [controller setToRecipients:self.toRecipients];
         [controller setCcRecipients:self.ccRecipients];
         [controller setBccRecipients:self.bccRecipients];
-        [controller setSubject:self.mailSubject];
+        [controller setSubject:self._mailSubject];
         [controller setMessageBody:self.mailBody isHTML:self.useHTML];
         // Attach an image to the email
         if (self.mailAttachment && [self.mailAttachment length]>0) {
@@ -470,7 +474,7 @@ static NSString * const ATTACHMENT_FILENAME = @"screenshot.jpg";
         case CTFeedbackSectionDeviceInfo:
             return CTFBLocalizedString(@"Device Info");
         case CTFeedbackSectionAppInfo:
-            return CTFBLocalizedString(@"App Info");
+            return self.hidesAppNameCell && self.hidesAppVersionCell ? nil : CTFBLocalizedString(@"App Info");
         default:
             return nil;
     }
