@@ -7,7 +7,7 @@ CTFeedback is a library to send feedback for iOS 6.0+.
 
 Install
 ----------
-CTFeedback is on [Cocoapods](http://cocoapods.org). Simply add:
+CTFeedback is on [CocoaPods](http://cocoapods.org). Simply add:
 
 ```Ruby
 pod 'CTFeedback'
