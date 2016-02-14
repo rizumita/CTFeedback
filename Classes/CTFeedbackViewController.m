@@ -604,7 +604,7 @@ static NSString * const ATTACHMENT_FILENAME = @"screenshot.jpg";
 	
 	if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad) {
 		if ([UIPopoverPresentationController class]) {
-			controller.modalPresentationStyle = UIModalPresentationPopover;
+			controller.modalPresentationStyle = UIModalPresentationFormSheet;
 			
 			UIPopoverPresentationController *presentationController = [controller popoverPresentationController];
 			presentationController.permittedArrowDirections = UIPopoverArrowDirectionAny;
