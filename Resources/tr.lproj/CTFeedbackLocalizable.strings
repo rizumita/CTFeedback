@@ -1,0 +1,55 @@
+/* Localizable.strings
+  CTFeedbackDemo
+
+  Created by Ryoichi Izumita on 2013/10/31.
+  Copyright (c) 2013 CAPH. All rights reserved. */
+
+// Edited by Gürhan Yerlikaya (gurhanyerlikaya@gmail.com)
+
+"Question" = "Soru";
+
+"Request" = "İstek";
+
+"Bug Report" = "Hata bildirimi";
+
+"Other" = "Diğer";
+
+"Device" = "Cihaz";
+
+"iOS" = "iOS";
+
+"Name" = "İsim";
+
+"Version" = "Sürüm";
+
+"Build" = "Build";
+
+"Device Info" = "Cihaz Bilgisi";
+
+"App Info" = "Uygulama bilgisi";
+
+"Feedback" = "Geri Bildirim";
+
+"Topic" = "Konu";
+
+"Topics" = "Konular";
+
+"Error" = "Hata";
+
+"Mail" = "Gönder";
+
+"Mail no configuration"="Cihazda tanımlı e-posta bulunamadı.";
+
+"Dismiss"="Son ver";
+
+"Additional Info"="Ek bilgi";
+
+"Additional detail"="Detay";
+
+"Cancel"="İptal";
+
+"Camera"="Kamera";
+
+"PhotoLibrary"="Cihaz’dan ekle";
+
+"User detail"="Kullanıcı detayı";
