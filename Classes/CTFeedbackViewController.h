@@ -46,6 +46,7 @@
 @property (nonatomic, strong) NSArray *bccRecipients;
 
 @property (nonatomic, strong) NSString *additionalDiagnosticContent;
+@property (nonatomic, strong) UIImage *screenshot;
 @property (assign) BOOL useHTML;
 
 + (CTFeedbackViewController *)controllerWithTopics:(NSArray *)topics localizedTopics:(NSArray *)localizedTopics;
