@@ -8,8 +8,15 @@
 
 #import "CTViewController.h"
 #import "CTFeedbackViewController.h"
+#import "CTAppDelegate.h"
 
 @interface CTViewController () <CTFeedbackViewControllerDelegate>
+
+@end
+
+@interface UIWindow(CTViewController)
+
+- (UIImage *)ct_snapshot;
 
 @end
 
@@ -30,6 +37,12 @@
 - (IBAction)feedbackButtonTapped:(id)sender
 {
     CTFeedbackViewController *feedbackViewController = [CTFeedbackViewController controllerWithTopics:CTFeedbackViewController.defaultTopics localizedTopics:CTFeedbackViewController.defaultLocalizedTopics];
+
+    if ([UIApplication sharedApplication] != nil &&
+        [[UIApplication sharedApplication].delegate window] != nil) {
+        feedbackViewController.screenshot = [[[UIApplication sharedApplication].delegate window] ct_snapshot];
+    }
+    
     [self.navigationController pushViewController:feedbackViewController animated:YES];
 }
 
@@ -37,6 +50,12 @@
 {
     CTFeedbackViewController *feedbackViewController = [CTFeedbackViewController controllerWithTopics:CTFeedbackViewController.defaultTopics localizedTopics:CTFeedbackViewController.defaultLocalizedTopics];
     feedbackViewController.toRecipients = @[@"ctfeedback@example.com"];
+
+    if ([UIApplication sharedApplication] != nil &&
+        [[UIApplication sharedApplication].delegate window] != nil) {
+        feedbackViewController.screenshot = [[[UIApplication sharedApplication].delegate window] ct_snapshot];
+    }
+
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:feedbackViewController];
     [self presentViewController:navigationController animated:YES completion:nil];
 }
@@ -47,6 +66,12 @@
     feedbackViewController.showsUserEmail = YES;
     feedbackViewController.useCustomCallback = YES;
     feedbackViewController.delegate = self;
+
+    if ([UIApplication sharedApplication] != nil &&
+        [[UIApplication sharedApplication].delegate window] != nil) {
+        feedbackViewController.screenshot = [[[UIApplication sharedApplication].delegate window] ct_snapshot];
+    }
+
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:feedbackViewController];
     navigationController.modalPresentationStyle = UIModalPresentationFormSheet;
     [self presentViewController:navigationController animated:YES completion:nil];
@@ -61,6 +86,12 @@
     feedbackViewController.hidesAppVersionCell = YES;
     feedbackViewController.hidesTopicCell = YES;
     feedbackViewController.mailSubject = @"Simple Title";
+
+    if ([UIApplication sharedApplication] != nil &&
+        [[UIApplication sharedApplication].delegate window] != nil) {
+        feedbackViewController.screenshot = [[[UIApplication sharedApplication].delegate window] ct_snapshot];
+    }
+
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:feedbackViewController];
     navigationController.modalPresentationStyle = UIModalPresentationFormSheet;
     [self presentViewController:navigationController animated:YES completion:nil];
@@ -90,6 +121,33 @@
     [self dismissViewControllerAnimated:YES completion:nil];
     
     [[[UIAlertView alloc] initWithTitle:@"Success" message:@"Your message has been send!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+}
+
+@end
+
+@implementation UIWindow(CTViewController)
+
+- (UIImage *)ct_snapshot
+{
+    UIScreen* mainScreen = [UIScreen mainScreen];
+    if (mainScreen == nil) {
+        return nil;
+    }
+
+    UIGraphicsBeginImageContextWithOptions(self.bounds.size, true, [mainScreen scale]);
+
+    CGContextRef currentContext = UIGraphicsGetCurrentContext();
+    if (currentContext == nil) {
+        return nil;
+    }
+
+    [[self layer] renderInContext:currentContext];
+
+    UIImage *result = UIGraphicsGetImageFromCurrentImageContext();
+
+    UIGraphicsEndImageContext();
+
+    return result;
 }
 
 @end

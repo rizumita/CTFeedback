@@ -39,6 +39,7 @@ typedef NS_ENUM(NSInteger, CTFeedbackSection){
 @property (nonatomic, strong) CTFeedbackAdditionInfoCellItem *additionCellItem;
 @property (nonatomic, readonly) NSString *mailBody;
 @property (nonatomic, readonly) NSData *mailAttachment;
+@property (nonatomic, readonly) NSData *screenshotAttachment;
 @property (nonatomic, assign) BOOL previousNavigationBarHiddenState;
 @property (nonatomic, strong) UIPopoverController *popoverController;
 @end
@@ -394,6 +395,10 @@ static NSString * const ATTACHMENT_FILENAME = @"screenshot.jpg";
     return UIImageJPEGRepresentation(self.additionCellItem.screenImage, 0.5);
 }
 
+- (NSData *)screenshotAttachment {
+    return UIImageJPEGRepresentation(self.screenshot, 0.5);
+}
+
 #pragma mark - send email
 - (void)sendButtonTapped:(id)sender
 {
@@ -413,6 +418,9 @@ static NSString * const ATTACHMENT_FILENAME = @"screenshot.jpg";
         // Attach an image to the email
         if (self.mailAttachment && [self.mailAttachment length]>0) {
             [controller addAttachmentData:self.mailAttachment mimeType:MIME_TYPE_JPEG fileName:ATTACHMENT_FILENAME];
+        }
+        if (self.screenshotAttachment && [self.screenshotAttachment length]>0) {
+            [controller addAttachmentData:self.screenshotAttachment mimeType:MIME_TYPE_JPEG fileName:ATTACHMENT_FILENAME];
         }
         [self presentViewController:controller animated:YES completion:nil];
     } else {
