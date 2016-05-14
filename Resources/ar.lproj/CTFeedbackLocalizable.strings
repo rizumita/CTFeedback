@@ -1,0 +1,53 @@
+/* Localizable.strings
+  CTFeedbackDemo
+
+  Created by Ehab Abdou on 2016/05/10.
+  Copyright (c) 2013 CAPH. All rights reserved. */
+
+"Question" = "سؤال";
+
+"Request" = "طلب";
+
+"Bug Report" = "الإبلاغ عن خطأ";
+
+"Other" = "آخر";
+
+"Device" = "الجهاز";
+
+"iOS" = "iOS";
+
+"Name" = "الاسم";
+
+"Version" = "الإصدار";
+
+"Build" = "البنية";
+
+"Device Info" = "معلومات الجهاز";
+
+"App Info" = "معلومات التطبيق";
+
+"Feedback" = "رأيك";
+
+"Topic" = "الموضوع";
+
+"Topics" = "المواضيع";
+
+"Error" = "خطأ";
+
+"Mail" = "إرسال";
+
+"Mail no configuration"="لم يكن لديك حساب بريد إلكتروني صالح";
+
+"Dismiss"="صرف";
+
+"Additional Info"="معلومات إضافية";
+
+"Additional detail"="اختر مرفق رأيك (صورة)";
+
+"Cancel"="إلغاء";
+
+"Camera"="كاميرا";
+
+"PhotoLibrary"="اختر من الألبوم";
+
+"User detail"="معلومات المستخدم";
