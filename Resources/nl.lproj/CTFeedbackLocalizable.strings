@@ -1,0 +1,53 @@
+/* Localizable.strings
+  CTFeedbackDemo
+
+  Created by Ryoichi Izumita on 2013/10/31.
+  Copyright (c) 2013 CAPH. All rights reserved. */
+
+"Question" = "Vraag";
+
+"Request" = "Verzoek";
+
+"Bug Report" = "Bug verslag";
+
+"Other" = "Overig";
+
+"Device" = "Toestel";
+
+"iOS" = "iOS";
+
+"Name" = "Naam";
+
+"Version" = "Versie";
+
+"Build" = "Build";
+
+"Device Info" = "Toestel informatie";
+
+"App Info" = "App informatie";
+
+"Feedback" = "Feedback";
+
+"Topic" = "Onderwerp";
+
+"Topics" = "Topics";
+
+"Error" = "Error";
+
+"Mail" = "Mail";
+
+"Mail no configuration" = "Je hebt geen geldige e-mail account";
+
+"Dismiss" = "Sluiten";
+
+"Additional Info" = "Extra informatie";
+
+"Additional detail" = "Selecteer een afbeelding";
+
+"Cancel" = "Annuleren";
+
+"Camera" = "Camera";
+
+"PhotoLibrary" = "Selecteer uit album";
+
+"User detail" = "Gebruiker detail";

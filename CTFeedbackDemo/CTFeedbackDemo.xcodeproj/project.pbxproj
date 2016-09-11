@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4BFE9D3A1BCD0FEC009C3860 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BFE9D391BCD0FEC009C3860 /* LaunchScreen.storyboard */; settings = {ASSET_TAGS = (); }; };
+		4BFE9D3A1BCD0FEC009C3860 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BFE9D391BCD0FEC009C3860 /* LaunchScreen.storyboard */; };
 		6A3F554E18222FB400217253 /* CTFeedbackCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A3F554D18222FB400217253 /* CTFeedbackCell.m */; };
 		6A3F554F18222FB400217253 /* CTFeedbackCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A3F554D18222FB400217253 /* CTFeedbackCell.m */; };
 		6A3F55521823243300217253 /* CTFeedbackTopicsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A3F55511823243300217253 /* CTFeedbackTopicsViewController.m */; };
@@ -63,6 +63,7 @@
 		577A223119EE5F0500C7A0B2 /* ur */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ur; path = ur.lproj/CTFeedbackLocalizable.strings; sourceTree = "<group>"; };
 		577A223219EE5F0600C7A0B2 /* ur */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ur; path = ur.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		577A223319EE5F0600C7A0B2 /* ur */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ur; path = ur.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		6A3F45B51CE7BE6C002356EE /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/CTFeedbackLocalizable.strings; sourceTree = "<group>"; };
 		6A3F554B1821FC2000217253 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/CTFeedbackLocalizable.strings; sourceTree = "<group>"; };
 		6A3F554C18222FB400217253 /* CTFeedbackCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTFeedbackCell.h; sourceTree = "<group>"; };
 		6A3F554D18222FB400217253 /* CTFeedbackCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTFeedbackCell.m; sourceTree = "<group>"; };
@@ -330,6 +331,7 @@
 				da,
 				"fa-IR",
 				ar,
+				nl,
 			);
 			mainGroup = 6AEC61191821D17600B6DB37;
 			productRefGroup = 6AEC61231821D17600B6DB37 /* Products */;
@@ -470,6 +472,7 @@
 				3DF043C01B7D2C1F00DF6316 /* da */,
 				CB0236101BAF562100B90D19 /* fa-IR */,
 				53C98D7A1CE1D29A0003894E /* ar */,
+				6A3F45B51CE7BE6C002356EE /* nl */,
 			);
 			name = CTFeedbackLocalizable.strings;
 			sourceTree = "<group>";
