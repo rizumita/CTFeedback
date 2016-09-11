@@ -1,0 +1,53 @@
+/* Localizable.strings
+  CTFeedbackDemo
+
+  Created by Ryoichi Izumita on 2013/10/31.
+  Copyright (c) 2013 CAPH. All rights reserved. */
+
+"Question" = "Förfrågan";
+
+"Request" = "Förslag";
+
+"Bug Report" = "Bugg";
+
+"Other" = "Annan";
+
+"Device" = "Enhet";
+
+"iOS" = "iOS";
+
+"Name" = "Namn";
+
+"Version" = "Version";
+
+"Build" = "Build";
+
+"Device Info" = "Enhetsinformation ";
+
+"App Info" = "App Info";
+
+"Feedback" = "Feedback";
+
+"Topic" = "Ämne";
+
+"Topics" = "Ämnen";
+
+"Error" = "Felmeddelande";
+
+"Mail" = "Skicka";
+
+"Mail no configuration"="Det går inte att verifiera ett giltligt epost-konto";
+
+"Dismiss"="Avfärda";
+
+"Additional Info"="Ytterligare information";
+
+"Additional detail"="Välj bifogad fil(bild) ";
+
+"Cancel"="Ångra";
+
+"Camera"="Kamera";
+
+"PhotoLibrary"="Välj från album";
+
+"User detail"="Användardetaljer";
