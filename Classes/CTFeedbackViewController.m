@@ -651,7 +651,7 @@ static NSString * const ATTACHMENT_FILENAME = @"screenshot.jpg";
 #pragma mark - UIImagePickerControllerDelegate
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
 	
-	void (^block)() = ^{
+	void (^block)(void) = ^{
 		NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:CTFeedbackSectionScreenshot];
 		CTFeedbackAdditionInfoCellItem *cellItem = self.cellItems[(NSUInteger)indexPath.section][(NSUInteger)indexPath.row];
 		
