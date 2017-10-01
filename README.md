@@ -1,6 +1,8 @@
 CTFeedback
 ==========
 
+**If your app supports over iOS9.0 and written in swift, you can use [CTFeedbackSwift](https://github.com/rizumita/CTFeedbackSwift) -**
+
 CTFeedback is a library to send feedback for iOS 6.0+.
 
 ![Screenshot](https://raw.github.com/rizumita/CTFeedback/master/CTFeedback.png)
